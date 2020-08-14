@@ -21,3 +21,33 @@ Models:
 .Subscription
    - belongs_to User
    - belongs_to Book
+
+
+Views:
+
+.Layout
+   - application
+   - about
+
+.Users
+   - new
+   - show
+
+.Books
+   - index
+   - new
+   - show
+
+.Subscriptions
+   - new 
+   - edit
+   - show
+
+.Reviews
+   - index
+   - new
+   - edit
+
+.Sessions
+   - home
+   - new
