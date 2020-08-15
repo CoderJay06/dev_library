@@ -35,6 +35,7 @@ Models:
 
 .Review
    - belongs_to Book
+   - belongs_to User
 
    attributes:
       - book_id
