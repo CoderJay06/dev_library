@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_15_072934) do
+ActiveRecord::Schema.define(version: 2020_08_15_074641) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
@@ -40,6 +40,18 @@ ActiveRecord::Schema.define(version: 2020_08_15_072934) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
+  create_table "subscriptions", force: :cascade do |t|
+    t.string "months"
+    t.string "subscription_type"
+    t.decimal "price", precision: 5, scale: 2
+    t.integer "user_id", null: false
+    t.integer "book_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_subscriptions_on_book_id"
+    t.index ["user_id"], name: "index_subscriptions_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -53,4 +65,6 @@ ActiveRecord::Schema.define(version: 2020_08_15_072934) do
   add_foreign_key "books", "categories"
   add_foreign_key "reviews", "books"
   add_foreign_key "reviews", "users"
+  add_foreign_key "subscriptions", "books"
+  add_foreign_key "subscriptions", "users"
 end
