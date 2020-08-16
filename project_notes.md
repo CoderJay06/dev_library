@@ -53,8 +53,6 @@ Models:
       - months
       - subscripton_type
       - price
-
-
 Views:
 
 .Layout
