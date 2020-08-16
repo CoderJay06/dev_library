@@ -51,7 +51,7 @@ Models:
       - user_id
       - book_id
       - months
-      - type
+      - subscripton_type
       - price
 
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_15_074641) do
+ActiveRecord::Schema.define(version: 2020_08_16_032021) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2020_08_15_074641) do
   end
 
   create_table "subscriptions", force: :cascade do |t|
-    t.string "months"
+    t.integer "months"
     t.string "subscription_type"
     t.decimal "price", precision: 5, scale: 2
     t.integer "user_id", null: false
