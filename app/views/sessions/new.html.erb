@@ -1,8 +1,6 @@
 <h1>Login</h1>
 
-<%= form_tag("/login", method: "post") do %>
-   <%# <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>
-   <%= hidden_field_tag :authenticity_token %>
+<%= form_tag(login_path) do %>
    <%= label_tag(:username) %>
    <%= text_field_tag(:username) %>
    <br>
