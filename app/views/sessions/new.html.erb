@@ -1,2 +1,13 @@
 <h1>Login</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+
+<%= form_tag("/login", method: "post") do %>
+   <%# <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>
+   <%= hidden_field_tag :authenticity_token %>
+   <%= label_tag(:username) %>
+   <%= text_field_tag(:username) %>
+   <br>
+   <%= label_tag(:password) %>
+   <%= password_field_tag(:password) %>
+   <br>
+   <%= submit_tag("Login") %>
+<% end %>
