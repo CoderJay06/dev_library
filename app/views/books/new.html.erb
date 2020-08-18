@@ -13,5 +13,6 @@
    <%= f.label :release_date %>
    <%= f.date_field :release_date %>
    <br>
+   <%= f.collection_select :category_id, Category.all, :id, :name %>
    <%= f.submit "Add" %>
 <% end %>
