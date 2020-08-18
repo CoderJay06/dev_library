@@ -17,3 +17,15 @@ Routes:
    
    DELETE '/logout'
       - logs out the user
+
+   GET '/books
+      - should present books index page
+
+   GET '/books/new'
+      - should render page for creating a new book
+
+   POST '/books/new'
+      - creates new book and persists data to the db
+        include validations
+
+   

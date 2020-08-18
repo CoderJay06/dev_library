@@ -1,0 +1,10 @@
+<h1>Books Index</h1>
+
+<ul><% @books.all.each do |book| %>
+   <li>Title: <%= book.title %></li>
+   <li>By: <%= book.author %></li>
+   <li>Description: <%= book.description %></li>
+   <li>Release Date: <%= book.release_date %></li>
+   <li>Category: <%= book.category.name %></li>
+   <br>
+</ul><% end %>
