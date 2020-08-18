@@ -24,7 +24,8 @@ class SessionsController < ApplicationController
 
   # logout user
   def destroy
-    binding.pry
+    session.clear
+    redirect_to '/'
   end 
 
   def home
