@@ -22,6 +22,11 @@ class SessionsController < ApplicationController
     end 
   end
 
+  # logout user
+  def destroy
+    binding.pry
+  end 
+
   def home
   end
 end
