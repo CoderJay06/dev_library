@@ -5,4 +5,5 @@ class User < ApplicationRecord
   has_many :books, through: :subscriptions
   validates :first_name, :last_name, :email, :username, :password,
     presence: true
+  validates :username, :email, uniqueness: true 
 end

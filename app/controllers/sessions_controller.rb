@@ -13,10 +13,8 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:password])
       # log them in and redirect them to their profile page
       session[:user_id] = @user.id 
-      # binding.pry
       redirect_to user_path(@user)
     else 
-
       # otherwise redirect them back to login
       redirect_to login_path
     end 
