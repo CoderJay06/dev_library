@@ -18,6 +18,22 @@ class BooksController < ApplicationController
       end 
    end 
 
+   def edit 
+      @book = Book.find_by_id(params[:id])
+   end 
+
+   def update 
+      @book = Book.find_by_id(params[:id])
+      @book.update(book_params)
+      # if book was updated successfully, send to book show page
+      if @book.save 
+         redirect_to book_path(@book)
+      else  
+         # otherwise render the edit form 
+         render :edit 
+      end 
+   end 
+
    def show
       @book = Book.find_by_id(params[:id])
    end 

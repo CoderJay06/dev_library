@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/home', to: 'sessions#home'
+  get '/books/:id/edit', to: 'books#edit'
+  patch '/books/:id', to: 'books#update'
   delete '/logout', to: 'sessions#destroy'
   resources :subscriptions
   resources :reviews

@@ -31,3 +31,14 @@ Routes:
    GET '/books/:id'
       - should render books show page
    
+   GET '/books/:id/edit'
+      - should render form for editing a book 
+
+   PATCH '/books/:id/edit' 
+      - updates book
+   
+   GET '/categories/new'
+      - should render page for creating a category
+   
+   POST '/categories/new'
+      - creates new category
