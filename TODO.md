@@ -28,4 +28,6 @@ Routes:
       - creates new book and persists data to the db
         include validations
 
+   GET '/books/:id'
+      - should render books show page
    
