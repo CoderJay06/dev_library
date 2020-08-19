@@ -38,6 +38,11 @@ class BooksController < ApplicationController
       @book = Book.find_by_id(params[:id])
    end 
 
+   def destroy
+      @book = Book.find_by_id(params[:id]).destroy
+      redirect_to books_path 
+   end 
+
    private
    def book_params
       params.require(:book).permit(:title, :author, :description, :release_date, :category_name)

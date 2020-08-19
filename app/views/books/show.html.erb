@@ -5,3 +5,5 @@
 <p>Description: <%= @book.description %>
 <p>Category: <%= @book.category_name %></p>
 <p>Release Date: <%= @book.release_date %></p>
+
+<%= button_to "Delete This Book", book_path(@book), method: :delete%>

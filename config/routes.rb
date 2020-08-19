@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/home', to: 'sessions#home'
   get '/books/:id/edit', to: 'books#edit'
   patch '/books/:id', to: 'books#update'
+  delete '/bookd/:id', to: 'books#destroy'
   delete '/logout', to: 'sessions#destroy'
   resources :subscriptions
   resources :reviews
