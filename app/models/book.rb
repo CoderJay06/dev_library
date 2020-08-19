@@ -5,6 +5,7 @@ class Book < ApplicationRecord
    has_many :users, through: :subscriptions
    validates :title, :author, :description, :release_date, :category, 
    presence: true
+   scope :recently_added, -> { order("books.updated_at DESC") }
 
    # category name writer for associating a book with a category
    def category_name=(name)
