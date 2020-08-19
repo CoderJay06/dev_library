@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   resources :subscriptions
   resources :reviews
   resources :categories
-  resources :books
+  resources :books do 
+    :reviews 
+  end
   resources :users
   root 'sessions#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
