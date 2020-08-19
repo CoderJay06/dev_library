@@ -43,6 +43,11 @@ class BooksController < ApplicationController
       redirect_to books_path 
    end 
 
+   def recently_added
+      @books = Book.recently_added
+      render :index
+   end 
+
    private
    def book_params
       params.require(:book).permit(:title, :author, :description, :release_date, :category_name)
