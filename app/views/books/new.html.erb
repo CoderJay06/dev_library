@@ -1,5 +1,18 @@
 <h1>Add a new book</h1>
 
+<!-- Display validation errors if any -->
+<% if @book.errors.any? %>
+   <div id="error_explanation">
+      <h2><%= pluralize(@book.errors.count, "error") %>
+       Prohibited this book from being added:</h2>
+      <ul>
+      <% @book.errors.full_messages.each do |error_msg| %>
+         <li><%= error_msg %></li>
+      <% end %>
+      </ul>
+   </div>
+<% end %>
+
 <%= form_for(@book) do |f| %>
    <%= f.label :title %>
    <%= f.text_field :title %>
