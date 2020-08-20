@@ -27,6 +27,11 @@ Models:
       - description
       - release_date
 
+Book reviews nested params:
+   :book => {
+      review
+   }
+
 .Category
    - has_many Books
 

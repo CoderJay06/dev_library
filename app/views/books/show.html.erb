@@ -9,6 +9,12 @@
 <%= button_to "Delete This Book", book_path(@book), method: :delete %>
 <br>
 <h4>Reviews section</h4>
+
+<% @book.reviews do |review| %>
+   <p>Rating: <%= review.rating %></p>
+   <p>Comment: <%= review.comment %></p>
+<% end %>
+
 <%= form_for @book do |book_form| %>
    <%= book_form.fields_for :reviews_attributes do |review_fields| %>
       <%= review_fields.label :rating %>
@@ -16,6 +22,8 @@
       <br>
       <%= review_fields.label :comment %>
       <%= review_fields.text_area :comment, placeholder: "Add a review comment", rows: 4 %>
+      <br>
+      <%= review_fields.submit "Add review" %>
    <% end %>
 <% end %>
 
