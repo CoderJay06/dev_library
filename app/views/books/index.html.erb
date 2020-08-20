@@ -5,7 +5,7 @@
 <% end %>
 
 <ul><% @books.all.each do |book| %>
-   <li>Title: <%= book.title %></li>
+   <li>Title: <strong><%= link_to book.title, book_path(book) %></strong></li>
    <li>By: <%= book.author %></li>
    <li>Description: <%= book.description %></li>
    <li>Release Date: <%= book.release_date %></li>
