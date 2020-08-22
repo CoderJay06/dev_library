@@ -24,6 +24,7 @@ class Book < ApplicationRecord
       # process attributes hash
       # {"rating" => "", "comment" => ""}
       # raise reviews_hashes.inspect
+      # binding.pry
       self.reviews.build(rating: reviews_hashes[:rating], comment: reviews_hashes[:comment]).save
    end    
 end

@@ -1,5 +1,12 @@
 <h1>Login</h1>
 
+<!-- Display validation errors if any -->
+<% if flash[:alert] %>
+   <div class="login-error">
+      <%= flash[:alert] %>
+   </div>
+<% end %>
+<br>
 <%= form_tag(login_path) do %>
    <%= label_tag(:username) %>
    <%= text_field_tag(:username) %>

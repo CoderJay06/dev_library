@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   # get login form
   def new
+    
   end
 
   # login user
@@ -16,6 +17,7 @@ class SessionsController < ApplicationController
       redirect_to user_path(@user)
     else 
       # otherwise redirect them back to login
+      flash[:alert] = "Could not login"
       redirect_to login_path
     end 
   end
