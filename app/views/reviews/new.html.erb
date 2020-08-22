@@ -1,6 +1,7 @@
 <h1>Write a review</h1>
 
-<%= form_for [@book, @review] do |f| %>
+<%= form_for ([@book, @book.reviews.build]) do |f| %>
+   <%= f.hidden_field :user_id %>
    <%= f.label :rating %>
    <%= f.number_field :rating, placeholder: "Rating(1-5)" %>
    <br>
