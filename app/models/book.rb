@@ -9,7 +9,7 @@ class Book < ApplicationRecord
    validates :description, length: { maximum: 500 }
    validates_associated :reviews 
    scope :recently_added, -> { order("books.updated_at DESC") }
-   # accepts_nested_attributes_for :reviews 
+   accepts_nested_attributes_for :reviews 
 
    # category name writer for associating a book with a category
    def category_name=(name)
@@ -20,11 +20,11 @@ class Book < ApplicationRecord
       self.category ? self.category.name : nil
    end 
 
-   def reviews_attributes=(reviews_hashes)
-      # process attributes hash
-      # {"rating" => "", "comment" => ""}
-      # raise reviews_hashes.inspect
-      # binding.pry
-      self.reviews.build(rating: reviews_hashes[:rating], comment: reviews_hashes[:comment]).save
-   end    
+   # def reviews_attributes=(reviews_hashes)
+   #    # process attributes hash
+   #    # {"rating" => "", "comment" => ""}
+   #    # raise reviews_hashes.inspect
+   #    # binding.pry
+   #    self.reviews.build(rating: reviews_hashes[:rating], comment: reviews_hashes[:comment]).save
+   # end    
 end
