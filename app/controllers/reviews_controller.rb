@@ -19,6 +19,25 @@ class ReviewsController < ApplicationController
       # binding.pry 
    end 
 
+   # GET "/books/1/reviews/1/edit"
+   def edit 
+      @book = Book.find_by(params[:book_id])
+      @review = Review.find_by(params[:id])
+   end 
+
+   # PATCH "/books/1/reviews/1/edit"
+   def update 
+      book = Book.find_by(params[:book_id])
+      review = Review.find_by(params[:id])
+
+      # update current user's review 
+      if review.user_id == current_user.id
+         if review.update(review_params)
+            redirect_to book_path(book)
+         end 
+      end 
+   end 
+
    def destroy
       # remove review made by current user
       review = Review.find_by(params[:id]) 
