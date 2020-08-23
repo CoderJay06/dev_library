@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
       @review = @book.reviews.build(review_params)
       @review.user_id = current_user.id
       @review.save
-      binding.pry 
+      
       redirect_to book_path(@book)
       # binding.pry 
    end 
@@ -23,6 +23,8 @@ class ReviewsController < ApplicationController
    end
 
    def destroy
+      # remove review made by current user
+      # review = Review.find_by(params[:id]) 
    end
 
    private 

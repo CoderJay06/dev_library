@@ -13,6 +13,8 @@
 <%= button_to "Write a review", new_book_review_path(@book), method: :get %>
 
 <% @book.reviews.each do |review| %>
-   <p>Rating: <%= review.rating %></p>
-   <p>Comment: <%= review.comment %></p>
+   <% if !review.rating.nil? && !review.comment.nil? %>
+      <p>Rating: <%= review.rating %></p>
+      <p>Comment: <%= review.comment %></p>
+   <% end %>
 <% end %>
