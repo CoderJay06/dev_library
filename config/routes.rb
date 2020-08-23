@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get '/books/recently_added', to: 'books#recently_added'
   get '/books/:id/reviews/new', to: 'reviews#new'
   post '/books/:id/reviews/new', to: 'reviews#create'
+  get '/books/:id/reviews/:id/edit', to: 'reviews#edit', as: 'edit_review'
+  delete '/books/:id/reviews/:id', to: 'reviews#destroy', as: 'delete_review'
   patch '/books/:id', to: 'books#update'
   delete '/bookd/:id', to: 'books#destroy'
   delete '/logout', to: 'sessions#destroy'

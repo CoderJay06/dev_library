@@ -19,12 +19,14 @@ class ReviewsController < ApplicationController
       # binding.pry 
    end 
 
-   def show
-   end
-
    def destroy
       # remove review made by current user
-      # review = Review.find_by(params[:id]) 
+      review = Review.find_by(params[:id]) 
+      if review.user_id == current_user.id 
+         review.destroy
+      end 
+
+      redirect_to book_path
    end
 
    private 
