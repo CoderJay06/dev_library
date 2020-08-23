@@ -13,6 +13,8 @@
     <% if current_user %>
       <%= link_to "Logout", logout_path, method: 'delete' %>
       <%= link_to "Books index", books_path %>
+      <%= link_to "Profile", user_path(current_user) %>
+      <%= link_to "Home", root_url %>
     <% end %>
     <%= yield %>
   </body>
