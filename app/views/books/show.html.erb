@@ -6,7 +6,9 @@
 <p>Category: <%= @book.category_name %></p>
 <p>Release Date: <%= @book.release_date %></p>
 
-<%= button_to "Delete This Book", book_path(@book), method: :delete %>
+<%= button_to "Edit book", edit_book_path(@book), method: :get %>
+<%= button_to "Delete book", book_path(@book), method: :delete %>
+
 <br>
 <h4>Customer reviews</h4>
 
