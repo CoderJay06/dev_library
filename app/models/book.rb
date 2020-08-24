@@ -1,8 +1,8 @@
 class Book < ApplicationRecord
    has_many :reviews
    belongs_to :category
-   has_many :subscriptions
-   has_many :users, through: :subscriptions
+   has_many :downloads
+   has_many :users, through: :downloads
    validates :title, :author, :description, :release_date, :category, 
    presence: true
    validates :title, :author, length: { in: 3..50 }
