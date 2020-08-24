@@ -42,3 +42,17 @@ Routes:
    
    POST '/categories/new'
       - creates new category
+
+   GET '/books/:id/reviews/new'
+      - render form to create new book reviews
+
+   POST '/books/:id/reviews/new'
+      - create new book review
+
+   GET '/books/:id/reviews/:id/edit'
+      - render form to edit book reviews
+
+   PATCH '/books/:id/reviews/:id/edit'
+      - edit book review
+
+
