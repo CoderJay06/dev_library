@@ -1,6 +1,9 @@
 <h1>Write a review</h1>
 
-<%= form_for ([@book, @book.reviews.build]) do |f| %>
+<% if flash[:alert] %>
+   <%= flash[:alert] %>
+<% end %>
+<%= form_for ([@book, @review]) do |f| %>
    <%= f.hidden_field :user_id %>
    <%= f.label :rating %>
    <%= f.number_field :rating %>
@@ -10,4 +13,3 @@
    <br>
    <%= f.submit %>
 <% end %>
-

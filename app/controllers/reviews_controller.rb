@@ -6,16 +6,20 @@ class ReviewsController < ApplicationController
 
    def new 
       @book = Book.find_by(params[:book_id])
-      @review = Review.new
+      @review = @book.reviews.build
    end 
 
    def create
       @book = Book.find_by(params[:book_id])
       @review = @book.reviews.build(review_params)
       @review.user_id = current_user.id
-      @review.save
-      
-      redirect_to book_path(@book)
+      # binding.pry
+      if @review.save
+         redirect_to book_path(@book)
+      else  
+         flash[:alert] = "Sorry, could not write a new review."
+         redirect_to new_book_review_path(@book)
+      end 
       # binding.pry 
    end 
 
