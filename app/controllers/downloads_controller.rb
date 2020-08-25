@@ -3,10 +3,16 @@ class DownloadsController < ApplicationController
    def create
       # binding.pry
       # TODO: need to create a new download properly
-      @download = Download.new
-      @download.user_id = current_user.id
-      @download.book_id = Book.find_by(params[:book_id])
-      @download.save
+      @book = Book.find_by(params[:book_id])
+      @download = Download.create(user_id: current_user.id,
+                                  book_id: @book.id)
+      if @download.save
+         flash[:notice] = "Successfully downloaded #{@book.title}"
+         redirect_to book_path(@book)
+      else  
+         flash[:alert] = "There was an error downloading #{@book.title}.."
+         redirect_to book_path(@book)
+      end 
    end
 
    private
