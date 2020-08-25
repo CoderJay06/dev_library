@@ -5,7 +5,7 @@
 <p>Description: <%= @book.description %>
 <p>Category: <%= @book.category_name %></p>
 <p>Release Date: <%= @book.release_date %></p>
-
+<%= button_to "Download", book_download_path(@book), method: :post %>
 <%= button_to "Edit book", edit_book_path(@book), method: :get %>
 <%= button_to "Delete book", book_path(@book), method: :delete %>
 

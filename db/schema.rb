@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_24_075531) do
+ActiveRecord::Schema.define(version: 2020_08_25_052142) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 2020_08_24_075531) do
   end
 
   create_table "downloads", force: :cascade do |t|
-    t.decimal "price", precision: 5, scale: 2
     t.integer "user_id", null: false
     t.integer "book_id", null: false
     t.datetime "created_at", precision: 6, null: false

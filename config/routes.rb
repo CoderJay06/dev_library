@@ -13,11 +13,12 @@ Rails.application.routes.draw do
   patch '/books/:id', to: 'books#update'
   delete '/bookd/:id', to: 'books#destroy'
   delete '/logout', to: 'sessions#destroy'
+  post '/books/:id/downloads/:id', to: 'downloads#create'
   resources :books do 
     resources :reviews 
+    resources :downloads
   end
   resources :books 
-  resources :subscriptions
   resources :categories
   resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
