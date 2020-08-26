@@ -1,4 +1,6 @@
 class DownloadsController < ApplicationController
+   before_action :require_login 
+   
    # download book selected by user
    def create
       # binding.pry

@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+   before_action :require_login, only: [:show]
+
    # get signup form
    def new 
       @user = User.new

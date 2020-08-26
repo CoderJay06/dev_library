@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+   before_action :require_login 
+   
    # render form for creating a category
    def new
       @category = Category.new 
