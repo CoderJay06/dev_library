@@ -1,19 +1,18 @@
 class DownloadsController < ApplicationController
    before_action :require_login 
-   
+
    # download book selected by user
    def create
       # binding.pry
       # TODO: need to create a new download properly
-      @book = Book.find_by(params[:book_id])
       @download = Download.create(user_id: current_user.id,
-                                  book_id: @book.id)
+                                  book_id: params[:id])
       if @download.save
-         flash[:notice] = "Successfully downloaded #{@book.title}"
-         redirect_to book_path(@book)
+         flash[:notice] = "Successfully downloaded #{@download.book.title}"
+         redirect_to book_path(@download.book)
       else  
-         flash[:alert] = "There was an error downloading #{@book.title}.."
-         redirect_to book_path(@book)
+         flash[:alert] = "There was an error downloading #{@download.book.title}.."
+         redirect_to book_path(@download.book)
       end 
    end
 

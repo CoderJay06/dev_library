@@ -1,3 +1,7 @@
 <h1>Welcome, <%= @user.username %></h1>
 
-<%= binding.pry %>
+<h2>Your books:</h2>
+<ul><% @user.books.each do |book| %>
+   <li><%= link_to "#{book.title}", book_path(book) %></li>
+   <li>By, <%= book.author %></li>
+</ul><% end %>
