@@ -55,4 +55,9 @@ Routes:
    PATCH '/books/:id/reviews/:id/edit'
       - edit book review
 
+Refactor: 
 
+* Refactor error display messages into partials
+* Slim down controllers 
+* Use helpers for view logic
+* Refactor routes (use resources)
