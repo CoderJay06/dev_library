@@ -3,6 +3,7 @@ class Book < ApplicationRecord
    belongs_to :category
    has_many :downloads
    has_many :users, through: :downloads
+   
    validates :title, :author, :description, :release_date, :category, 
    presence: true
    validates :title, :author, length: { in: 3..50 }

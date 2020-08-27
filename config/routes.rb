@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   get '/home', to: 'sessions#home'
   get '/books/recently_added', to: 'books#recently_added'
 
-  # get '/auth/failure', to: redirect('/')
+  
+  # Routes for google oauth
+  get '/auth/:provider/callback', to: 'sessions#googleAuth'
+  # get 'auth/failure', to: redirect('/')
+
   get '/books/:id/reviews/new', to: 'reviews#new'
   get '/books/:id/reviews/:id/edit', to: 'reviews#edit', as: 'edit_review'
   post '/login', to: 'sessions#create'
@@ -17,9 +21,6 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   post '/books/:id/downloads/:id', to: 'downloads#create'
 
-  # Routes for google oauth
-  get '/auth/:provider/callback', to: 'sessions#googleAuth'
-  
   resources :books do 
     resources :reviews 
     resources :downloads
