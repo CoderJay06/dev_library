@@ -28,7 +28,7 @@ gem 'pry'
 
 # Omniauth authentication via Google
 # gem 'omniauth'
-gem 'omniauth-rails_csrf_protection'
+# gem 'omniauth-rails_csrf_protection'
 # gem 'omniauth-github'
 # gem 'dotenv-rails'
 gem 'omniauth-google-oauth2'
