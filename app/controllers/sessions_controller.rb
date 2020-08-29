@@ -29,9 +29,32 @@ class SessionsController < ApplicationController
     redirect_to '/'
   end 
 
-  def googleAuth
+  def googleAuth # log users in with google omniauth
     # get access tokens from google server
-    binding.pry
+    # binding.pry
+    user = User.find_or_create_by(email: auth['info']['email']) do |user|
+        random_password = SecureRandom.hex(16);
+        user.first_name = auth["info"]["name"].split(' ')[0]
+        user.last_name = auth["info"]["name"].split(' ')[1]
+        user.email = auth["info"]["email"]
+        user.email_confirmation = auth["info"]["email"]
+        user.username = auth["info"]["email"]
+        user.password = random_password
+        user.password_confirmation = random_password
+    end 
+    # binding.pry 
+
+    if user.valid?
+      # if user created successfully log them in and 
+      # send them to their profile
+      session[:user_id] = user.id 
+      redirect_to user_path
+    else
+      # otherwise, display error messages and 
+      # redirect them back to homepage
+      flash[:alert] = user.errors.full_messages
+      redirect_to root_path
+    end 
   end 
 
   def home
