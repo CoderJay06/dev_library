@@ -13,4 +13,16 @@ class User < ApplicationRecord
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :username, :email, uniqueness: true 
   validates :email, :password_confirmation, confirmation: true
+
+  def self.find_or_create_from_omniauth(auth_hash)
+    self.find_or_create_by(email: auth_hash.info.email) do |user|
+      user.provider = auth_hash.provider
+      user.uid = auth_hash.uid
+      user.first_name = auth_hash.info.name.split(' ')[0]
+      user.last_name = auth_hash.info.name.split(' ')[1]
+      user.email = auth_hash.info.email
+      user.username = auth_hash.info.email
+      user.password = SecureRandom.hex;
+    end
+  end
 end

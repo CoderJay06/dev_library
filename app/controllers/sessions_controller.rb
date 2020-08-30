@@ -30,33 +30,11 @@ class SessionsController < ApplicationController
     redirect_to '/'
   end 
 
-  def googleAuth # log users in with google omniauth
-    if google_auth_hash = auth 
-      omniauth_email = auth["info"]["email"]
-      if user = User.find_by(email: omniauth_email)
-        # if user exists, log them in and send to profile page
-        session[:user_id] = user.id 
-        redirect_to user_path(user)
-      else   
-        # otherwise create new user
-        user = User.new(
-          first_name: auth["info"]["name"].split(' ')[0],
-          last_name: auth["info"]["name"].split(' ')[1],
-          email: auth["info"]["email"],
-          username: auth["info"]["email"],
-          password: SecureRandom.hex(16)
-        )
-        if user.save 
-          # if user created successfully then sign 
-          # them in and send to their profile page
-          session[:user_id] = user.id 
-          redirect_to user_path(user)
-        else  
-          # otherwise display errors
-          raise user.errors.full_messages.inspect 
-        end 
-      end 
-    end 
+  # log users in with google omniauth
+  def googleAuth 
+    user = User.find_or_create_from_omniauth(auth)
+    session[:user_id] = user.id 
+    redirect_to user_path(user)
   end 
 
   def home
