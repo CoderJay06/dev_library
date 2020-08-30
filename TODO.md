@@ -57,6 +57,7 @@ Routes:
 
 Refactor: 
 
+* Refactor OmniAuth logic into User model
 * Refactor error display messages into partials
 * Slim down controllers 
 * Use helpers for view logic

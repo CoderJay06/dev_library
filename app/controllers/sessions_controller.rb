@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   before_action :require_login, only: [:destroy]
+
   # get login form
   def new
     
@@ -39,11 +40,11 @@ class SessionsController < ApplicationController
       else   
         # otherwise create new user
         user = User.new(
-        first_name: auth["info"]["name"].split(' ')[0],
-        last_name: auth["info"]["name"].split(' ')[1],
-        email: auth["info"]["email"],
-        username: auth["info"]["email"],
-        password: SecureRandom.hex(16)
+          first_name: auth["info"]["name"].split(' ')[0],
+          last_name: auth["info"]["name"].split(' ')[1],
+          email: auth["info"]["email"],
+          username: auth["info"]["email"],
+          password: SecureRandom.hex(16)
         )
         if user.save 
           # if user created successfully then sign 
