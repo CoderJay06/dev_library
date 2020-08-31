@@ -2,16 +2,21 @@ class ReviewsController < ApplicationController
    before_action :require_login 
 
    def new 
-      @book = Book.find_by(params[:book_id])
+      # binding.pry 
+      # @book = Book.find(params[:book_id])
+      # @review = @book.reviews.build
+      @book = Book.find(params[:book_id])
       @review = @book.reviews.build
    end 
 
    def create
-      @book = Book.find_by(params[:book_id])
+      # binding.pry 
+      @book = Book.find(params[:book_id])
       @review = @book.reviews.build(review_params)
       @review.user_id = current_user.id
+      @review.save
       # binding.pry
-      if @review.save
+      if @review
          redirect_to book_path(@book)
       else  
          flash[:alert] = "Sorry, could not write a new review."
@@ -22,14 +27,17 @@ class ReviewsController < ApplicationController
 
    # GET "/books/1/reviews/1/edit"
    def edit 
-      @book = Book.find_by(params[:book_id])
-      @review = Review.find_by(user_id: current_user.id)
+      # binding.pry 
+      @book = Book.find(params[:book_id])
+      # @review = Review.find(params[:id])
+      @review = Review.find(params[:id])
    end 
 
    # PATCH "/books/1/reviews/1/edit"
    def update 
-      book = Book.find_by(params[:book_id])
-      review = Review.find_by(user_id: current_user.id)
+      # binding.pry
+      book = Book.find(params[:book_id])
+      review = Review.find(params[:id])
 
       # update current user's review 
       if review.user_id == current_user.id
@@ -41,15 +49,23 @@ class ReviewsController < ApplicationController
 
    def destroy
       # remove review made by current user
-      review = Review.find_by(user_id: current_user.id)
+      # binding.pry 
+      review = Review.find(params[:id])
+      book = Book.find(review.book_id)
 
       # set review's owner to the current user
       if review.user_id == current_user.id 
          review.destroy
       end 
 
-      redirect_to book_path
+      redirect_to book_path(book)
    end
+
+   # GET "/users/1/reviews"
+   def show
+      # binding.pry
+      @user = User.find_by_id(current_user.id)
+   end 
 
    private 
    def review_params

@@ -1,0 +1,12 @@
+<h2><%= @user.username %>'s Reviews</h2>
+
+<% @user.reviews.each do |review| %>
+   <% book = Book.find_by_id(review.book_id) %>
+   <br>
+   <%= link_to book.title, book_path(book) %>
+   <br>
+   Rating: <%= review.rating %>
+   <br>
+   Comment: <%= review.comment %>
+   <br>
+<% end %>
