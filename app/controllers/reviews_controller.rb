@@ -16,11 +16,11 @@ class ReviewsController < ApplicationController
       @review.user_id = current_user.id
       @review.save
       # binding.pry
-      if @review
+      if @review && @review.valid?
          redirect_to book_path(@book)
       else  
-         flash[:alert] = "Sorry, could not write a new review."
-         redirect_to new_book_review_path(@book)
+         # redirect_to new_book_review_path(@book)
+         render :new
       end 
       # binding.pry 
    end 
@@ -35,14 +35,16 @@ class ReviewsController < ApplicationController
 
    # PATCH "/books/1/reviews/1/edit"
    def update 
-      # binding.pry
-      book = Book.find(params[:book_id])
-      review = Review.find(params[:id])
+      @book = Book.find(params[:book_id])
+      @review = Review.find(params[:id])
 
       # update current user's review 
-      if review.user_id == current_user.id
-         if review.update(review_params)
+      if @review.user_id == current_user.id
+         if @review.update(review_params)
+            # binding.pry 
             redirect_to book_path(book)
+         else  
+            render :edit 
          end 
       end 
    end 

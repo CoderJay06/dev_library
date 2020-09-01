@@ -9,6 +9,7 @@ class Book < ApplicationRecord
    validates :title, :author, length: { in: 3..50 }
    validates :description, length: { maximum: 500 }
    validates_associated :reviews
+   
    scope :recently_added, -> { order("books.updated_at DESC") }
    accepts_nested_attributes_for :reviews, :downloads
 

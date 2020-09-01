@@ -1,17 +1,6 @@
 <h2>Edit Review</h2>
 
-<!-- Display validation errors if any -->
-<% if @review.errors.any? %>
-   <div id="error_explanation">
-      <h2><%= pluralize(@review.errors.count, "error") %>
-       Prohibited this review from being edited:</h2>
-      <ul>
-      <% @review.errors.full_messages.each do |error_msg| %>
-         <li><%= error_msg %></li>
-      <% end %>
-      </ul>
-   </div>
-<% end %>
+<%= render partial: "layouts/form_errors", locals: {object: @review } %>
 
 <%= form_for ([@book, @review]) do |f| %>
    <%= f.hidden_field :user_id %>
