@@ -1,0 +1,12 @@
+<!-- Display validation errors if any -->
+<% if object.errors.any? %>
+   <div id="error_explanation">
+      <h2><%= pluralize(object.errors.count, "error") %>
+       Prohibited this from being saved:</h2>
+      <ul>
+      <% object.errors.full_messages.each do |error_msg| %>
+         <li><%= error_msg %></li>
+      <% end %>
+      </ul>
+   </div>
+<% end %>

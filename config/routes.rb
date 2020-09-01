@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#new'
   get '/home', to: 'sessions#home'
+  get'/logout', to: 'sessions#destroy'
   get '/books/recently_added', to: 'books#recently_added'
 
   
@@ -20,7 +21,6 @@ Rails.application.routes.draw do
   delete '/books/:id/reviews/:id', to: 'reviews#destroy', as: 'delete_review'
   # patch '/books/:id', to: 'books#update'
   # delete '/bookd/:id', to: 'books#destroy'
-  delete '/logout', to: 'sessions#destroy'
   post '/books/:id/downloads/:id', to: 'downloads#create' 
 
   resources :books do 

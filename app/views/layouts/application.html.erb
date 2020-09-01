@@ -6,12 +6,12 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%# <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <% if current_user %>
-      <%= link_to "Logout", logout_path, method: 'delete' %>
+      <%= link_to "Logout", logout_path %>
       <%= link_to "Books index", books_path %>
       <%= link_to "Profile", user_path(current_user) %>
       <%= link_to "Home", root_url %>
