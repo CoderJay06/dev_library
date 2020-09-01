@@ -14,9 +14,10 @@ class ReviewsController < ApplicationController
       @book = Book.find(params[:book_id])
       @review = @book.reviews.build(review_params)
       @review.user_id = current_user.id
-      @review.save
+      # @review.save
       # binding.pry
       if @review && @review.valid?
+         @review.save
          redirect_to book_path(@book)
       else  
          # redirect_to new_book_review_path(@book)
@@ -42,7 +43,7 @@ class ReviewsController < ApplicationController
       if @review.user_id == current_user.id
          if @review.update(review_params)
             # binding.pry 
-            redirect_to book_path(book)
+            redirect_to book_path(@book)
          else  
             render :edit 
          end 
