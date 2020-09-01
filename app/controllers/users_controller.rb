@@ -13,8 +13,7 @@ class UsersController < ApplicationController
       # check if user was created 
       if @user.save
          # login and redirect to user show
-         session[:user_id] = @user.id
-         redirect_to user_path(@user)
+         login_and_redirect(@user)
       else
          # binding.pry
          render :new

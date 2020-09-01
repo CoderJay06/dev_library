@@ -15,8 +15,7 @@ class SessionsController < ApplicationController
     # authenticate user data and log them in
     if @user && @user.authenticate(params[:password])
       # log them in and redirect them to their profile page
-      session[:user_id] = @user.id 
-      redirect_to user_path(@user)
+      login_and_redirect(@user)
     else 
       # otherwise redirect them back to login
       flash[:alert] = "Could not login"
@@ -33,8 +32,7 @@ class SessionsController < ApplicationController
   # log users in with google omniauth
   def googleAuth 
     user = User.find_or_create_from_omniauth(auth)
-    session[:user_id] = user.id 
-    redirect_to user_path(user)
+    login_and_redirect(@user)
   end 
 
   def home
