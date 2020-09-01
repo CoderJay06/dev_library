@@ -8,20 +8,16 @@ class UsersController < ApplicationController
 
    # signup user
    def create 
-      # create new user 
       @user = User.create(user_params)
-      # check if user was created 
+
       if @user.save
-         # login and redirect to user show
          login_and_redirect(@user)
       else
-         # binding.pry
          render :new
       end 
    end 
 
    def show 
-      # binding.pry
       @user = User.find_by_id(params[:id])
    end 
 
