@@ -8,7 +8,6 @@ class DownloadsController < ApplicationController
    end
 
    private
-
    def determine_download_success_and_redirect
       if @download.save
          flash[:notice] = "Successfully downloaded #{@download.book.title}"

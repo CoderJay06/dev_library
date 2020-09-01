@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-   before_action :require_login
+   before_action :require_login, :set_book, only: [:edit, :update, :show]
    
    def index 
       @books = Book.all 
@@ -19,11 +19,10 @@ class BooksController < ApplicationController
    end 
 
    def edit 
-      set_book
+
    end 
 
    def update 
-      set_book
       @book.update(book_params)
 
       if @book.save 
@@ -34,7 +33,7 @@ class BooksController < ApplicationController
    end 
 
    def show
-      set_book
+
    end 
 
    def destroy
