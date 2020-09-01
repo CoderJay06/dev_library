@@ -1,13 +1,18 @@
 class ApplicationController < ActionController::Base
    protect_from_forgery with: :exception 
-   helper_method :current_user, :logged_in?, :login_and_redirect
+   helper_method :current_user, :logged_in?, :homepage, :login_and_redirect
+
 
    def logged_in?
       current_user ? true : false 
    end 
 
    def require_login
-      redirect_to '/' unless current_user
+      redirect_to homepage unless current_user
+   end 
+
+   def homepage
+      root_url
    end 
 
    def current_user
