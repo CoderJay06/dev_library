@@ -59,6 +59,7 @@ Refactor:
 
 * Refactor OmniAuth logic into User model
 * Refactor error display messages into partials
+* Refactor forms into partials
 * Slim down controllers 
 * Use helpers for view logic
 * Refactor routes (use resources)
