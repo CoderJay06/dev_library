@@ -11,13 +11,12 @@ class SessionsController < ApplicationController
   # login user
   def create
     @user = User.find_by(username: params[:username])
-
     authenticate_and_login(@user)
   end
 
   # logout user
   def destroy
-    session.clear
+    logout 
     redirect_to homepage 
   end 
 

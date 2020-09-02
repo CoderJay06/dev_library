@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-   before_action :require_login, only: [:show]
+   before_action :require_login, only: [:show, :delete, :destroy]
 
    # get signup form
    def new 
@@ -19,6 +19,17 @@ class UsersController < ApplicationController
 
    def show 
       @user = User.find_by_id(params[:id])
+   end
+
+   def delete 
+   end 
+
+   def destroy
+      if User.find_by_id(params[:id]).destroy
+         flash[:success] = "User account deleted."
+         logout 
+         redirect_to homepage 
+      end 
    end 
 
    private 

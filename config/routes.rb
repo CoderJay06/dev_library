@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   # get '/books/:id/reviews/:id/edit', to: 'reviews#edit', as: 'edit_review'
 
   get '/users/:id/reviews', to: 'reviews#show', as: 'user_reviews'
+  get '/users/:id/delete', to: 'users#delete'
+  delete '/users/:id', to: 'users#destroy', as: 'delete_account'
   post '/login', to: 'sessions#create'
   # post '/books/:id/reviews/new', to: 'reviews#create'
   # patch '/books/:id/reviews/:id/edit', to: 'reviews#update'
@@ -28,7 +30,7 @@ Rails.application.routes.draw do
     resources :downloads
   end
   resources :books 
+  resources :users, only: [:new, :create, :show]
   resources :categories
-  resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
