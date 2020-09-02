@@ -1,16 +1,7 @@
-<% if @books == Book.recently_added %>
-   <h1>Recently added books</h1>
-<% else %>
-   <h1>Books Index</h1>
-<% end %>
+<h1><%= display_books_heading(@book) %></h1>
 
 <ul><% @books.all.each do |book| %>
-   <li>Title: <strong><%= link_to book.title, book_path(book) %></strong></li>
-   <li>By: <%= book.author %></li>
-   <li>Description: <%= book.description %></li>
-   <li>Release Date: <%= book.release_date %></li>
-   <li>Category: <%= book.category.name %></li>
-   <br>
+      <%= render 'book_li', book: book %>
 </ul><% end %>
 <br>
 <%= button_to "Add book", new_book_path, method: :get %>
