@@ -7,4 +7,11 @@ module BooksHelper
       end 
    end 
 
+   def display_download_success_message
+      if flash[:notice] 
+         flash[:notice] 
+      else 
+         flash[:alert] 
+      end
+   end 
 end

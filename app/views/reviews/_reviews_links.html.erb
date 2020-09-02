@@ -1,0 +1,10 @@
+<!-- User render or content_tag_for or helper to refactor the code here? -->
+
+  <% if !review.rating.nil? && !review.comment.nil? %>
+      <p>Rating: <%= review.rating %></p>
+      <p>Comment: <%= review.comment %></p>
+      <% if review.user_id == current_user.id %>
+         <%= button_to "Edit", edit_book_review_path(@book, review), method: :get %>
+         <%= button_to "Delete", delete_review_path(@book, review), method: :delete %>
+      <% end %>
+   <% end %>

@@ -6,11 +6,7 @@
 <p>Category: <%= @book.category_name %></p>
 <p>Release Date: <%= @book.release_date %></p>
 <br>
-<% if  flash[:notice] %>
-   <p class="successful-download"><%= flash[:notice] %></p>
-<% else %>
-   <p class="unsuccessful-download"><%= flash[:alert] %></p>
-<% end %>
+<%= display_download_success_message %>
 <br>
 <%= button_to "Download", book_download_path(@book), method: :post %>
 <%= button_to "Edit book", edit_book_path(@book), method: :get %>
@@ -22,12 +18,6 @@
 <%= button_to "Write a review", new_book_review_path(@book), method: :get %>
 
 <% @book.reviews.each do |review| %>
-   <% if !review.rating.nil? && !review.comment.nil? %>
-      <p>Rating: <%= review.rating %></p>
-      <p>Comment: <%= review.comment %></p>
-      <% if review.user_id == current_user.id %>
-         <%= button_to "Edit", edit_book_review_path(@book, review), method: :get %>
-         <%= button_to "Delete", delete_review_path(@book, review), method: :delete %>
-      <% end %>
-   <% end %>
+   <!-- User render or content_tag_for or helper to refactor the code here? -->
+   <%= render '/reviews/reviews_links', review: review %>
 <% end %>
