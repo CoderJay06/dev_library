@@ -2,4 +2,4 @@
 
 <%= render partial: "layouts/form_errors", locals: {object: @review } %>
 
-<%= render 'form' %>
+<%= render 'form', review: @review, book: @book %>

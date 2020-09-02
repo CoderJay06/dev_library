@@ -5,4 +5,4 @@
 <%# render the form errors partial, send it @user as the object %>
 <%= render partial: "layouts/form_errors", locals: {object: @user } %>
 
-<%= render 'form' %>
+<%= render 'form', user: @user %>
