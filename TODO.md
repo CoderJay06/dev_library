@@ -61,5 +61,5 @@ Refactor:
 * Refactor error display messages into partials X
 * Refactor forms into partials X
 * Slim down controllers X?
-* Use helpers for view logic
+* Use helpers for view logic X
 * Refactor routes (use resources)
