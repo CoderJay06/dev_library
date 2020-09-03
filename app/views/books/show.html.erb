@@ -8,7 +8,7 @@
 <br>
 <%= display_download_success_message %>
 <br>
-<%= button_to "Download", book_download_path(@book), method: :post %>
+<%= button_to "Download", download_book_path(@book), method: :post %>
 <%= button_to "Edit book", edit_book_path(@book), method: :get %>
 <%= button_to "Delete book", book_path(@book), method: :delete %>
 
