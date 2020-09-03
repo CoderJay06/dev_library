@@ -1,7 +1,6 @@
 <h1>Homepage</h1>
 
+
 <% unless current_user %>
-   <%= link_to "Signup", signup_path %>
-   <%= link_to "Login", login_path %>
-   <%= link_to "Login with Google", '/auth/google_oauth2' %>
-<% end %>
+   <%= render partial: 'logged_out_links' %>
+<% end %> 

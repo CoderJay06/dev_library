@@ -11,10 +11,7 @@
 
   <body>
     <% if current_user %>
-      <%= link_to "Logout", logout_path %>
-      <%= link_to "Books index", books_path %>
-      <%= link_to "Profile", user_path(current_user) %>
-      <%= link_to "Home", root_url %>
+      <%= render partial: 'layouts/logged_in_links' %>
     <% end %>
     <%= yield %>
   </body>

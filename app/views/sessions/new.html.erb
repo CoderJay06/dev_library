@@ -1,13 +1,9 @@
-<%= link_to "Home", root_url %>
+<%= link_to "Home", homepage %>
 <%= link_to "Signup", signup_path %>
 <h1>Login</h1>
 
 <!-- Display validation errors if any -->
-<% if flash[:alert] %>
-   <div class="login-error">
-      <%= flash[:alert] %>
-   </div>
-<% end %>
+<%= display_validation_alert_if_error %>
 <br>
 <%= form_tag(login_path) do %>
    <%= label_tag(:username) %>
