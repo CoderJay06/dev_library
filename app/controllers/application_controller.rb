@@ -15,6 +15,10 @@ class ApplicationController < ActionController::Base
       redirect_to homepage unless current_user
    end 
 
+   def require_admin
+      redirect_to homepage unless current_user.admin?
+   end 
+
    def homepage
       root_url
    end 
