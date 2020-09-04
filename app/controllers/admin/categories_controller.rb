@@ -1,4 +1,4 @@
-class CategoriesController < ApplicationController
+class Admin::CategoriesController < ApplicationController
    before_action :require_login, :require_admin 
   
    def new
