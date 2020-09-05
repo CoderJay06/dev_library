@@ -1,4 +1,7 @@
 <%= form_for(@user) do |f| %>
+   <%= f.label :admin%>
+   <%= f.check_box :admin %>
+   <br>
    <%= f.label :first_name %>
    <%= f.text_field :first_name %>
    <br>

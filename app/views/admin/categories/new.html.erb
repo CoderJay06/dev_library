@@ -2,7 +2,7 @@
 
 <%= render partial: 'layouts/form_errors', locals: {object: @category} %>
 
-<%= form_for(@category) do |f| %>
+<%= form_for([:admin, @category]) do |f| %>
    <%= f.label :name %>
    <%= f.text_field :name %>
    <br>

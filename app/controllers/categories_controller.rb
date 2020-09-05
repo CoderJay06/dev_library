@@ -1,21 +1,9 @@
 class CategoriesController < ApplicationController
-   before_action :require_login 
-  
-   def new
-      @category = Category.new 
-   end 
-
-   def create 
-      @category = Category.create(category_params)
-      if @category.save
-         redirect_to books_path
-      else  
-         render :new 
-      end 
-   end 
-
-   private 
-   def category_params
-      params.require(:category).permit(:name)
+   def index
+      # show all categories
    end
-end
+
+   def show
+      # books for a specific category
+   end 
+end 

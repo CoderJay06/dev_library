@@ -15,12 +15,17 @@ Rails.application.routes.draw do
   post '/books/:id/downloads/:id', to: 'downloads#create' , as: 'download_book'
   get '/books/recently_added', to: 'books#recently_added'
 
+  namespace :admin do 
+    resources :categories, only: [:new, :create]
+    resources :books, except: [:index, :show]
+  end 
+
   resources :books do 
     resources :reviews
     resources :downloads
   end
-  resources :books
+  resources :books, only: [:index, :show, :recently_added]
   resources :users
-  resources :categories, only: [:new, :create]
+  resources :categories, only: [:index, :show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

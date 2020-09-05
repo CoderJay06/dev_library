@@ -26,6 +26,15 @@ user3 = User.create(first_name: "Mary",
                     username: "marryP", 
                     password: "mp1234",
                     password_confirmation: "mp1234")
+user4 = User.create(first_name: "Donald",
+                    last_name: "Knuth",
+                    email: "dknuth@mail.com",
+                    email_confirmation: "dknuth@mail.com",
+                    password: "dk123",
+                    password_confirmation: "dk123",
+                    admin: true)
+
+
 
 category1 = Category.create(name: "Computer Science")
 category2 = Category.create(name: "Software Development")
