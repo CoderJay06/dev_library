@@ -1,13 +1,15 @@
 <h1>Welcome, <%= @user.username %></h1>
 
-<h2>Your books:</h2>
-<ul><% @user.books.each do |book| %>
-   <li><%= link_to "#{book.title}", book_path(book) %></li>
-   <li>By, <%= book.author %></li>
-   <%# <%= render '/books/book_li', book: book %>
-</ul><% end %>
-<br>
-<%= link_to "Your reviews", user_reviews_path %>
-<br>
-<br>
-<%= link_to "Delete account", url_for(action: :delete), method: :get %>
+<% unless current_user.admin? %>
+   <h2>Your books:</h2>
+   <ul><% @user.books.each do |book| %>
+      <li><%= link_to "#{book.title}", book_path(book) %></li>
+      <li>By, <%= book.author %></li>
+      <%# <%= render '/books/book_li', book: book %>
+   </ul><% end %>
+   <br>
+   <%= link_to "Your reviews", user_reviews_path %>
+   <br>
+   <br>
+   <%= link_to "Delete account", url_for(action: :delete), method: :get %>
+<% end %>

@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
                  :homepage, 
                  :login_and_redirect, 
                  :require_login,
-                 :require_admin,
                  :logout
 
    def logged_in?

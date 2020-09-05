@@ -10,8 +10,8 @@
 <br>
 <%= button_to "Download", download_book_path(@book), method: :post %>
 <% if current_user.admin? %> 
-   <%= button_to "Edit book", edit_book_path(@book), method: :get %>
-   <%= button_to "Delete book", book_path(@book), method: :delete %>
+   <%= button_to "Edit book", edit_admin_book_path(@book), method: :get %>
+   <%= button_to "Delete book", admin_book_path(@book), method: :delete %>
 <% end %>
 
 <br>
