@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     resources :reviews
     resources :downloads
   end
+  
   resources :books, only: [:index, :show, :recently_added]
   resources :users
   resources :categories, only: [:index, :show]

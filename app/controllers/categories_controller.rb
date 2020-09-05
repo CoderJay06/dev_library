@@ -1,11 +1,11 @@
 class CategoriesController < ApplicationController
+   before_action :require_login
+
    def index
       @categories = Category.all
    end
 
    def show
-      # books for a specific category
-      # binding.pry 
-      @category_books = Category.find_by(params[:category_id]).books
+      @category = Category.find_by(params[:category_id])
    end 
 end 

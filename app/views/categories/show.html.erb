@@ -1,6 +1,5 @@
-<h1>Category Show</h1>
-
-<% @category_books.each do |book| %>
+<h1><%= @category.name %> Books</h1>
+<% @category.books.each do |book| %>
    <%= link_to book.title, book_path(book) %>
    <br>
 <% end %>
