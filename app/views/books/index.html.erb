@@ -6,6 +6,6 @@
 <br>
 
 <% if current_user.admin? %>
-  <%= button_to "Add book", new_book_path, method: :get %>
+  <%= button_to "Add book", new_admin_book_path, method: :get %>
   <%= button_to "Add category", new_admin_category_path, method: :get %>
 <% end %>
