@@ -1,5 +1,4 @@
-class Admin::CategoriesController < ApplicationController
-   before_action :require_login, :require_admin 
+class Admin::CategoriesController < AdminController
   
    def new
       @category = Category.new 
