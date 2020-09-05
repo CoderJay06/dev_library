@@ -28,6 +28,7 @@ user3 = User.create(first_name: "Mary",
                     password_confirmation: "mp1234")
 user4 = User.create(first_name: "Donald",
                     last_name: "Knuth",
+                    username: "dknuth",
                     email: "dknuth@mail.com",
                     email_confirmation: "dknuth@mail.com",
                     password: "dk123",
