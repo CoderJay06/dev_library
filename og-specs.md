@@ -15,7 +15,8 @@ Specs:
   - A User has many Books through Downloads, A Book has many Users through Downloads.
 
 - [x] The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (attribute_name e.g. ingredients.quantity)
-  - The through part of A User has many Books through Downloads  includes submittable attribute download.price if the user is an admin.
+  - For the through part of A User has many Books through Downloads, it includes a user submittable attribute download.format for 
+    selecting the download format type of each book.
 
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
   - User, Book, Category and Review models all include validations.
