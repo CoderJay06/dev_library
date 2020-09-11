@@ -8,6 +8,13 @@
 <br>
 <%= display_download_success_message %>
 <br>
+<%# Add collection select menu so user's can select a download format %>
+<select name="download[format]" id="download_format">
+   <option value="1"><%= @download_formats[0] %></option>
+   <option value="2"><%= @download_formats[1] %></option>
+   <option value="3"><%= @download_formats[2] %></option>
+</select>
+
 <%= button_to "Download", download_book_path(@book), method: :post %>
 <% if current_user.admin? %> 
    <%= button_to "Edit book", edit_admin_book_path(@book), method: :get %>
