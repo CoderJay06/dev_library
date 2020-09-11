@@ -9,9 +9,6 @@ class BooksController < ApplicationController
    def show
       # Set array of download format types
       @download_formats = ["PDF", "EPUB", "DOC"]
-      # download = Download.find_by(params[:id])
-      # binding.pry
-      # download.format = params[:download][:format]
    end 
 
    def recently_added
