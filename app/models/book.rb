@@ -23,6 +23,16 @@ class Book < ApplicationRecord
       self.category ? self.category.name : nil
    end 
 
+   # author name writer for associating a book with it's author
+   def author_name=(name)
+      # binding.pry 
+      self.author = Author.find_or_create_by(name: name)
+   end 
+
+   def author_name
+      self.author ? self.author.name : nil 
+   end 
+
    # def reviews_attributes=(reviews_hashes)
    #    # process attributes hash
    #    # {"rating" => "", "comment" => ""}

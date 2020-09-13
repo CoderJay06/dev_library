@@ -2,8 +2,10 @@
    <%= f.label :title %>
    <%= f.text_field :title %>
    <br>
-   <%= f.label :author %>
-   <%= f.text_field :author %>
+   <%# <%= f.label "New author" %>
+   <%# <%= f.text_field :author_name %>
+   <br>
+   <%= f.collection_select :author_name, Author.all, :name, :name, {prompt: "Author"} %>
    <br>
    <%= f.label :description %>
    <%= f.text_area :description %>
@@ -11,7 +13,7 @@
    <%= f.label :release_date %>
    <%= f.date_field :release_date %>
    <br>
-   <%= f.collection_select :category_name, Category.all, :name, :name %>
+   <%= f.collection_select :category_name, Category.all, :name, :name, {prompt: "Category"} %>
    <br>
    <%= f.submit %>
 <% end %>
