@@ -19,6 +19,8 @@ class Admin::AuthorsController < ApplicationController
 
    def destroy
       # delete a specific author
+      author = Author.find_by_id(params[:id]).destroy
+      redirect_to authors_path 
    end
 
    private

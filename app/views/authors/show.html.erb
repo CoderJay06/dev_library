@@ -8,3 +8,7 @@
    <li><%= link_to book.title, book_path(book) %></li>
 </ul><% end %>
 <% end %>
+
+<% if current_user.admin? %>
+   <%= button_to "Delete author", admin_author_path(@author), method: :delete %>
+<% end %>
