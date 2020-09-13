@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   namespace :admin do 
     resources :categories, only: [:new, :create]
     resources :books, except: [:index, :show]
-    resources :authors, only: [:new, :create, :destroy]
+    resources :authors, except: [:index, :show]
   end 
 
   resources :books do 
@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   end
   
   resources :books, only: [:index, :show, :recently_added]
-  # resources :authors
+  resources :authors, only: [:index, :show]
   resources :users
   resources :categories, only: [:index, :show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
