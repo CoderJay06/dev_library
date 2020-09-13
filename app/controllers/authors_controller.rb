@@ -1,17 +1,9 @@
 class AuthorsController < ApplicationController
   def index
-    
-  end
-
-  def new
-  end
-
-  def create
+    # show all authors
   end
 
   def show
-  end
-
-  def destroy
+    # show author's profile page
   end
 end

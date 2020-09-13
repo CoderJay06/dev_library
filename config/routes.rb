@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  get 'authors/index'
-  get 'authors/new'
-  get 'authors/create'
-  get 'authors/show'
-  get 'authors/destroy'
   root 'sessions#home'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
@@ -23,6 +18,7 @@ Rails.application.routes.draw do
   namespace :admin do 
     resources :categories, only: [:new, :create]
     resources :books, except: [:index, :show]
+    resources :authors, only: [:new, :create, :destroy]
   end 
 
   resources :books do 
@@ -31,6 +27,7 @@ Rails.application.routes.draw do
   end
   
   resources :books, only: [:index, :show, :recently_added]
+  # resources :authors
   resources :users
   resources :categories, only: [:index, :show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
