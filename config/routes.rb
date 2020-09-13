@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'authors/index'
+  get 'authors/new'
+  get 'authors/create'
+  get 'authors/show'
+  get 'authors/destroy'
   root 'sessions#home'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
