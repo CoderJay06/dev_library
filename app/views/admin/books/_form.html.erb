@@ -2,10 +2,13 @@
    <%= f.label :title %>
    <%= f.text_field :title %>
    <br>
-   <%# <%= f.label "New author" %>
-   <%# <%= f.text_field :author_name %>
-   <br>
-   <%= f.collection_select :author_name, Author.all, :name, :name, {prompt: "Author"} %>
+   <%= f.label :author %> 
+   <%= f.text_field :author_name, list: "authors_autocomplete" %>
+   <datalist id="authors_autocomplete">
+      <% Author.all.each do |author| %>
+         <option value="<%= author.name %>">
+      <% end %>
+   </datalist>
    <br>
    <%= f.label :description %>
    <%= f.text_area :description %>
