@@ -1,6 +1,7 @@
 class Book < ApplicationRecord
-   has_many :reviews
+   belongs_to :author
    belongs_to :category
+   has_many :reviews
    has_many :downloads
    has_many :users, through: :downloads
    
