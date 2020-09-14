@@ -10,5 +10,5 @@
 <% end %>
 
 <% if current_user.admin? %>
-   <%= button_to "Delete author", admin_author_path(@author), method: :delete %>
+   <%= link_to "Delete author & books", delete_author_path %>
 <% end %>

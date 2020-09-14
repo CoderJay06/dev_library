@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get '/users/:id/reviews', to: 'reviews#show', as: 'user_reviews'
   post '/books/:id/downloads/:id', to: 'downloads#create' , as: 'download_book'
   get '/books/recently_added', to: 'books#recently_added'
+  get '/admin/authors/:id/delete', to: 'admin/authors#delete', as: 'delete_author'
+  delete '/admin/authors/:id', to: 'admin/authors#destroy'
 
   namespace :admin do 
     resources :categories, only: [:new, :create]
