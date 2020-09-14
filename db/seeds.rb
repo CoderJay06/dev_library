@@ -41,8 +41,14 @@ category1 = Category.create(name: "Computer Science")
 category2 = Category.create(name: "Software Development")
 category3 = Category.create(name: "Software Engineering")
 
+author1 = Author.create(name: "Dave Thomas & Andy Hunt")
+author2 = Author.create(name: "Thomas Cormen")
+author3 = Author.create(name: "Steve McConnell")
+author4 = Author.create(name: "Gayle Laakmann McDowell")
+author5 = Author.create(name: "Robert C. Martin")
+
 book1 = Book.create(title: "Pragmatic Programmer", 
-                    author: "Dave Thomas & Andy Hunt", 
+                    author_id: author1.id, 
                     description: "The Pragmatic Programmer: From Journeyman to Master is a book about computer 
                     programming and software engineering, written by Andrew Hunt and David Thomas and published 
                     in October 1999. It is used as a textbook in related university courses. It was the first in 
@@ -50,27 +56,27 @@ book1 = Book.create(title: "Pragmatic Programmer",
                     release_date: 1999, 
                     category_id: category2.id)
 book2 = Book.create(title: "Introduction to Algorithms", 
-                    author: "Thomas Cormen", 
+                    author_id: author2.id, 
                     description: "ntroduction to Algorithms is a book on computer programming by Thomas H. Cormen, 
                     Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. The book has been widely used as 
                     the textbook for algorithms courses at many universities",
                     release_date: 1992, 
                     category_id: category1.id)
 book3 = Book.create(title: "Code Complete", 
-                    author: "Steve McConnell", 
+                    author_id: author3.id, 
                     description: "Code Complete is a software development book, written by Steve McConnell and published 
                     in 1993 by Microsoft Press, encouraging developers to continue past code-and-fix programming and the 
                     big design up front and waterfall models",
                     release_date: 2001, 
                     category_id: category2.id)
 book4 = Book.create(title: "Cracking the Coding Interview", 
-                    author: "Gayle Laakmann McDowell", 
+                    author_id: author4.id, 
                     description: "Now in the 6th edition, Cracking the Coding Interview gives you the interview preparation 
                     you need to get the top software developer jobs.",
                     release_date: 2019, 
                     category_id: category1.id)
 book5 = Book.create(title: "Clean Code: A Handbook of Agile Software Craftsmanship", 
-                    author: "Robert C. Martin", 
+                    author_id: author5.id, 
                     description: "Every year, countless hours and significant resources are lost because of poorly written code. 
                     But it doesn't have to be that way. Noted software expert Robert C. Martin presents a revolutionary paradigm 
                     with Clean Code: A Handbook of Agile Software Craftsmanship .",

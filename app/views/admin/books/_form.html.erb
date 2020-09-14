@@ -2,8 +2,13 @@
    <%= f.label :title %>
    <%= f.text_field :title %>
    <br>
-   <%= f.label :author %>
-   <%= f.text_field :author %>
+   <%= f.label :author %> 
+   <%= f.text_field :author_name, list: "authors_autocomplete" %>
+   <datalist id="authors_autocomplete">
+      <% Author.all.each do |author| %>
+         <option value="<%= author.name %>">
+      <% end %>
+   </datalist>
    <br>
    <%= f.label :description %>
    <%= f.text_area :description %>
@@ -11,7 +16,7 @@
    <%= f.label :release_date %>
    <%= f.date_field :release_date %>
    <br>
-   <%= f.collection_select :category_name, Category.all, :name, :name %>
+   <%= f.collection_select :category_name, Category.all, :name, :name, {prompt: "Category"} %>
    <br>
    <%= f.submit %>
 <% end %>

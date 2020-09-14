@@ -1,6 +1,7 @@
 class Book < ApplicationRecord
-   has_many :reviews
+   belongs_to :author
    belongs_to :category
+   has_many :reviews
    has_many :downloads
    has_many :users, through: :downloads
    
@@ -10,7 +11,7 @@ class Book < ApplicationRecord
    validates :description, length: { maximum: 500 }
    validates_associated :reviews
    
-   scope :recently_added, -> { order("books.updated_at DESC") }
+   scope :recently_added, -> { order("books.updated_at DESC LIMIT 10") }
    accepts_nested_attributes_for :reviews, :downloads
 
    # category name writer for associating a book with a category
@@ -20,6 +21,16 @@ class Book < ApplicationRecord
 
    def category_name
       self.category ? self.category.name : nil
+   end 
+
+   # author name writer for associating a book with it's author
+   def author_name=(name)
+      # binding.pry 
+      self.author = Author.find_or_create_by(name: name)
+   end 
+
+   def author_name
+      self.author ? self.author.name : nil 
    end 
 
    # def reviews_attributes=(reviews_hashes)
