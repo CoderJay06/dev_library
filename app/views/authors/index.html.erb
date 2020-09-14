@@ -3,3 +3,7 @@
    <br>
    <%= link_to author.name, author_path(author) %>
 <% end %>
+
+<% if current_user.admin? %>
+   <%= button_to "Add author", new_admin_author_path, method: :get %>
+<% end %>

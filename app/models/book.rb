@@ -25,7 +25,6 @@ class Book < ApplicationRecord
 
    # author name writer for associating a book with it's author
    def author_name=(name)
-      # binding.pry 
       self.author = Author.find_or_create_by(name: name)
    end 
 
