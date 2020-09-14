@@ -7,8 +7,8 @@ class Book < ApplicationRecord
    
    validates :title, :author, :description, :release_date, :category, 
    presence: true
-   validates :title, :author, length: { in: 3..50 }
-   validates :description, length: { maximum: 500 }
+   validates :title, :author, length: { in: 3..250 }
+   validates :description, length: { maximum: 2000 }
    validates_associated :reviews
    
    scope :recently_added, -> { order("books.updated_at DESC LIMIT 10") }

@@ -46,6 +46,8 @@ author2 = Author.create(name: "Thomas Cormen")
 author3 = Author.create(name: "Steve McConnell")
 author4 = Author.create(name: "Gayle Laakmann McDowell")
 author5 = Author.create(name: "Robert C. Martin")
+author6 = Author.create(name: "Fredrick P. Brooks")
+author7 = Author.create(name: "Kent Beck")
 
 book1 = Book.create(title: "Pragmatic Programmer", 
                     author_id: author1.id, 
@@ -81,4 +83,29 @@ book5 = Book.create(title: "Clean Code: A Handbook of Agile Software Craftsmansh
                     But it doesn't have to be that way. Noted software expert Robert C. Martin presents a revolutionary paradigm 
                     with Clean Code: A Handbook of Agile Software Craftsmanship .",
                     release_date: 2009, 
+                    category_id: category2.id)
+book6 = Book.create(title: "The Mythical Man-Month: Essays on Software Engineering", 
+                    author_id: author6.id, 
+                    description: "a book on software engineering and project management by Fred Brooks first published in 1975, 
+                    with subsequent editions in 1982 and 1995. Its central theme is that 'adding manpower to a late software 
+                    project makes it later'. This idea is known as 'Brooks law', and is presented along with the second-system 
+                    effect and advocacy of prototyping.",
+                    release_date: 1995, 
+                    category_id: category3.id)
+book7 = Book.create(title: "Refactoring: Improving the Design of Existing Code", 
+                    author_id: author7.id, 
+                    description: "Your class library works, but could it be better? Refactoring: Improving the Design of Existing 
+                    Code shows how refactoring can make object-oriented code simpler and easier to maintain. Today refactoring 
+                    requires considerable design know-how, but once tools become available, all programmers should be able to 
+                    improve their code using refactoring techniques.",
+                    release_date: 1999, 
+                    category_id: category2.id)
+book8 = Book.create(title: "Agile Software Development : Principles, Patterns, and Practices", 
+                    author_id: author5.id, 
+                    description: "Written by a software developer for software developers, this book is a unique collection of the 
+                    latest software development methods. The author includes OOD, UML, Design Patterns, Agile and XP methods with a 
+                    detailed description of a complete software design for reusable programs in C++ and Java. Using a practical, 
+                    problem-solving approach, it shows how to develop an object-oriented application from the early stages of analysis, 
+                    through the low-level design and into the implementation.",
+                    release_date: 2002, 
                     category_id: category2.id)

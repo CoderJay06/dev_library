@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_09_13_033709) do
   end
 
   create_table "downloads", force: :cascade do |t|
+    t.decimal "price", precision: 5, scale: 2
     t.integer "user_id", null: false
     t.integer "book_id", null: false
     t.datetime "created_at", precision: 6, null: false
