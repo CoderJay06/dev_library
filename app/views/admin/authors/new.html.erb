@@ -1,8 +1,2 @@
 <h1>Add an author</h1>
-<%= render partial: 'layouts/form_errors', locals: {object: @author} %>
-<%= form_for([:admin, @author]) do |f| %>
-   <%= f.label :name %>
-   <%= f.text_field :name %>
-   <br>
-   <%= f.submit "Add author"%>
-<% end %>
+<%= render partial: 'form', author: @author %>
