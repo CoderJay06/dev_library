@@ -6,27 +6,25 @@
 <p>Category: <%= @book.category_name %></p>
 <p>Release Date: <%= @book.release_date %></p>
 <br>
-<%= display_download_success_message %>
 <br>
-<%# Add collection select menu so user's can select a download format %>
-<select name="download[format]" id="download_format">
-   <option value="1"><%= @download_formats[0] %></option>
-   <option value="2"><%= @download_formats[1] %></option>
-   <option value="3"><%= @download_formats[2] %></option>
-</select>
-
-<%= button_to "Download", download_book_path(@book), method: :post %>
 <% if current_user.admin? %> 
    <%= button_to "Edit book", edit_admin_book_path(@book), method: :get %>
    <%= button_to "Delete book", admin_book_path(@book), method: :delete %>
-<% end %>
+<% else %>
+   <%= display_download_success_message %>
+   <%# Add collection select menu so user's can select a download format %>
+   <select name="download[format]" id="download_format">
+      <option value="1"><%= @download_formats[0] %></option>
+      <option value="2"><%= @download_formats[1] %></option>
+      <option value="3"><%= @download_formats[2] %></option>
+   </select>
+   <%= button_to "Download", download_book_path(@book), method: :post %>
+   <br>
+   <h4>Customer reviews</h4>
 
-<br>
-<h4>Customer reviews</h4>
+   <%= button_to "Write a review", new_book_review_path(@book), method: :get %>
 
-<%= button_to "Write a review", new_book_review_path(@book), method: :get %>
-
-<% @book.reviews.each do |review| %>
-   <!-- User render or content_tag_for or helper to refactor the code here? -->
-   <%= render '/reviews/reviews_links', review: review %>
+   <% @book.reviews.each do |review| %>
+      <%= render '/reviews/reviews_links', review: review %>
+   <% end %>
 <% end %>
