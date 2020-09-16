@@ -1,7 +1,15 @@
-# README
+# Dev Library
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A content management system library application for Software Development books. Aimed mainly towards Software Development students, Computer Science students, professional developers and instructors. A user of this app can find the technical books they need for their school, profession or just to learn. User's can signup for an account and download their books straight from the application.
+
+## Version
+Ruby
+Rails
+
+## How to get started
+Clone this project, navigate to the dev_library directory and run the following commands:
+$'bundle install' <- To install gems
+$'rails s' <- to run the server
 
 Things you may want to cover:
 
@@ -22,4 +30,4 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-# dev_library
+
