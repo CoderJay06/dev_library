@@ -7,9 +7,9 @@ Ruby
 Rails
 
 ## How to get started
-Clone this project, navigate to the dev_library directory and run the following commands:
-$'bundle install' <- To install gems
-$'rails s' <- to run the server
+Clone this project, navigate to the dev_library directory and run the following commands:<br>
+$`bundle install` <- To install gems<br>
+$`rails s` <- to run the server<br>
 
 Things you may want to cover:
 
