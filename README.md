@@ -8,26 +8,8 @@ Rails
 
 ## How to get started
 Clone this project, navigate to the dev_library directory and run the following commands:<br>
-$`bundle install` <- To install gems<br>
-$`rails s` <- to run the server<br>
+$`bundle install` To install gems<br>
+$`rails s` to run the server<br>
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
+For Bootstrap on the front end run the following:
+$`yarn add bootstrap jquery popper.js`
