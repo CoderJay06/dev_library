@@ -47,31 +47,26 @@
       <div class="row">
          <div class="col-md-4 mx-auto">
             <div class="myform form ">
-               <%# <form action="" method="post" name="login"> %>
                <%= form_for @user, html: {name: "login"} do |f| %>
                   <div class="form-group">
-                     <%# <input type="text" name="name"  class="form-control my-input" id="name" placeholder="Name"> %>
                      <%= f.label :first_name %>
                      <%= f.text_field :first_name, class: "form-control my-input", placeholder: "First Name" %>
                   </div>
                   <div class="form-group">
-                     <%# <input type="text" name="name"  class="form-control my-input" id="name" placeholder="Name"> %>
                      <%= f.label :last_name %>
                      <%= f.text_field :last_name, class: "form-control my-input", placeholder: "Last Name" %>
                   </div>
                   <div class="form-group">
-                     <%# <input type="text" name="name"  class="form-control my-input" id="name" placeholder="Name"> %>
                      <%= f.label :email %>
                      <%= f.email_field :email, class: "form-control my-input", placeholder: "Email" %>
                   </div>
                   <div class="form-group">
-                     <%# <input type="email" name="email"  class="form-control my-input" id="email" placeholder="Email"> %>
                      <%= f.label :email_confirmation %>
                      <%= f.email_field :email_confirmation, class: "form-control my-input", placeholder: "Email Confirmation" %>
                   </div>
                   <div class="form-group">
                      <%= f.label :username %>
-                     <%= f.text_field :username, class: "form-control my-input", placeholder: "Jay" %>
+                     <%= f.text_field :username, class: "form-control my-input", placeholder: "Username" %>
                   </div>
                   <div class="form-group">
                       <%= f.label :password %>
@@ -82,7 +77,6 @@
                       <%= f.password_field :password_confirmation, class: "form-control my-input", placeholder: "Password Confirmation" %>
                   </div>
                   <div class="text-center ">
-                     <%# <button type="submit" class=" btn btn-block send-button tx-tfm">Create Your Free Account</button> %>
                      <%= f.submit "Signup", class: " btn btn-block send-button tx-tfm" %>
                   </div>
                   <div class="col-md-12 ">
@@ -92,9 +86,10 @@
                      </div>
                   </div>
                   <div class="form-group">
-                     <a class="btn btn-block g-button" href="/auth/google_oauth2">
-                     <i class="fa fa-google"></i> Sign up with Google
-                     </a>
+                     <%# <a class="btn btn-block g-button" href="/auth/google_oauth2"> %>
+                     <%= link_to '/auth/google_oauth2', class: "btn btn-block g-button" do %>
+                        <i class="fa fa-google"></i> Sign up with Google
+                     <% end %>
                   </div>
                   <p class="small mt-3">By signing up, you are indicating that you have read and agree to the <a href="#" class="ps-hero__content__link">Terms of Use</a> and <a href="#">Privacy Policy</a>.
                   </p>
