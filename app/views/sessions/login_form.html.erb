@@ -1,0 +1,41 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<head><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"/></head>
+<div class="container">
+<div class="row">
+   <h1><i class="fa fa-lock" aria-hidden="true"></i> Login</h1>
+   
+   </div><br /><br />
+            <div class="input-group">
+                     
+                  <div class="input-group-prepend">
+                     <span class="input-group-text"><i class="fas fa-user-tie"></i></span>
+                  </div>
+                  <%= label_tag(:username) %>
+                  <%= text_field_tag(:username), class: "form-control", placeholder: "username or email" %>
+               </div><br />
+   
+            <div class="input-group">
+                  <div class="input-group-prepend">
+                     <span class="input-group-text"><i class="fa fa-key icon"></i></span>
+                  </div>
+                     <%= label_tag(:password) %>
+                     <%= password_field_tag(:password), class: "form-control", placeholder: "password" %>
+               </div><br />
+            <div class="checkbox">
+            <label><input type="checkbox" value=""/> Remember me</label>
+            </div><br />
+                  <%= submit_tag("Login"), class: "btn btn-success" %><span class="glyphicon glyphicon-off"></span> Login</button>
+
+         <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-remove"></span>Login with Facebook </button><br />
+         <br /> <center><div style="border:1px solid black;height:1px;width:300px;"></div></center><br />
+      <div class="footer">
+            <p>Don't have an Account! <a href="#">Sign Up Here</a></p>
+      <p>Forgot <a href="#">Password?</a></p>
+   </div>
+   <% end %>
+
+</div>

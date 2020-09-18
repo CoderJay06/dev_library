@@ -1,8 +1,8 @@
-<%= link_to "Home", homepage %>
+
+<!-- <%= link_to "Home", homepage %>
 <%= link_to "Signup", signup_path %>
 <h1>Login</h1>
 
-<!-- Display validation errors if any -->
 <%= display_validation_alert_if_error %>
 <br>
 <%= form_tag(login_path) do %>
@@ -13,4 +13,46 @@
    <%= password_field_tag(:password) %>
    <br>
    <%= submit_tag("Login") %>
-<% end %>
+<% end %> -->
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<head><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"/></head>
+<%= link_to "Home", homepage %>
+<%= link_to "Signup", signup_path %>
+<%= display_validation_alert_if_error %>
+<div class="container">
+<div class="row">
+   <h1><i class="fa fa-lock" aria-hidden="true"></i> Login</h1>
+      <%= form_tag(login_path) do %>
+      </div><br /><br />
+   
+         <div class="input-group">
+               
+            <div class="input-group-prepend">
+               <span class="input-group-text"><i class="fas fa-user-tie"></i></span>
+            </div>
+               <%= text_field_tag :username, nil, class: "form-control", placeholder: "username or email" %>
+         </div><br />
+
+         <div class="input-group">
+            <div class="input-group-prepend">
+               <span class="input-group-text"><i class="fa fa-key icon"></i></span>
+            </div>
+               <%= password_field_tag :password, nil, class: "form-control", placeholder: "password" %>
+         </div><br />
+
+         <div class="checkbox">
+            <label><input type="checkbox" value=""/> Remember me</label>
+         </div><br />
+            <%= button_to "Login", login_path, class: "btn btn-success" %><span class="glyphicon glyphicon-off"></span><br /><br />
+            <%= button_to "Login with Google", '/auth/google_oauth2', class: "btn btn-info" %><span class="glyphicon glyphicon-remove"></span><br />
+            <br /> <center><div style="border:1px solid black;height:1px;width:300px;"></div></center><br />
+         <div class="footer">
+         <p>Don't have an Account! <a href="#">Sign Up Here</a></p>
+      <p>Forgot <a href="#">Password?</a></p>
+      </div>
+   <% end %>
+</div>

@@ -1,0 +1,41 @@
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="span3 well">
+      <legend>New to Dev Library? Sign up!</legend>
+    <%# <form accept-charset="UTF-8" action="" method="post"> %>
+    <%= form_for(@user) do |f| %>
+      <%= f.label :admin%>
+      <%= f.check_box :admin %>
+      <br>
+		<%# <input class="span3" name="name" placeholder="Full Name" type="text">  %>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, nil, class: "span3" %>
+      <br>
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, nil, class: "span3" %>
+        <%# <input class="span3" name="username" placeholder="Username" type="text">
+        <input class="span3" name="password" placeholder="Password" type="password">  %>
+        <br>
+        <%= f.label :email %>
+        <%= f.email_field :email, nil, class: "span3" %>
+        <br>
+        <%= f.label :email_confirmation %>
+        <%= f.email_field :email_confirmation, nil, class: "span3" %>
+        <br>
+        <%= f.label :username %>
+        <%= f.text_field :username, nil, class: "span3" %>
+        <br>
+        <%= f.label :password %>
+        <%= f.password_field :password, nil, class: "span3" %>
+        <br>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, nil, class: "span3"  %>
+        <br>
+        <%= f.submit "Sign up for Dev Library", nil, class: "btn btn-warning" %>
+        <%# <button class="btn btn-warning" type="submit">Sign up for WebApp</button> %>
+    <%# </form> %>
+    <% end %>
+</div>
