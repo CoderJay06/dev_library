@@ -4,7 +4,7 @@
    <h2>Your books:</h2>
    <ul><% @user.books.each do |book| %>
       <li><%= link_to "#{book.title}", book_path(book) %></li>
-      <li>By, <%= book.author %></li>
+      <li>By, <%= book.author.name %></li>
       <%# <%= render '/books/book_li', book: book %>
    </ul><% end %>
    <br>
