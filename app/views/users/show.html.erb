@@ -3,8 +3,9 @@
 <% unless current_user.admin? %>
    <h2>Your books:</h2>
    <ul><% @user.books.each do |book| %>
-      <li><%= link_to "#{book.title}", book_path(book) %></li>
-      <li>By, <%= book.author.name %></li>
+      <li><strong><%= link_to "#{book.title}", book_path(book) %></strong></li>
+      <li>By, <i><%= link_to book.author.name, author_path(book.author) %></i></li>
+      <br>
       <%# <%= render '/books/book_li', book: book %>
    </ul><% end %>
    <br>
