@@ -13,6 +13,7 @@
 <% else %>
    <%= display_download_success_message %>
    <%# Add collection select menu so user's can select a download format %>
+   <br>
    <select name="download[format]" id="download_format">
       <option value="1"><%= @download_formats[0] %></option>
       <option value="2"><%= @download_formats[1] %></option>
