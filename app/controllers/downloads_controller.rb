@@ -4,11 +4,10 @@ class DownloadsController < ApplicationController
    def create
       @download = Download.create(user_id: current_user.id,
                                   book_id: params[:id],
-                                  count: params[:count],
+                                  quantity: params[:quantity],
                                   format: params[:format]
                                   )
       determine_download_success
-      # binding.pry
       redirect_to book_path(@download.book)
    end
 
