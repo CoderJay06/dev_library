@@ -14,13 +14,10 @@
    <%= display_download_success_message %>
    <%# Add collection select menu so user's can select a download format %>
    <br>
-   <select name="download[format]" id="download_format">
-      <option value="1"><%= @download_formats[0] %></option>
-      <option value="2"><%= @download_formats[1] %></option>
-      <option value="3"><%= @download_formats[2] %></option>
-   </select>
    <%= form_tag(download_book_path(@book)) do %>
-      <%= select_tag "count", raw("<option>1</option><option>2</option><option>3</option><option>4</option>"), prompt: "Qty" %>
+      <%= select_tag "count", options_for_select((1..10).each { |qty| qty }), prompt: "Qty" %>
+      <br>
+      <%= select_tag "format",  options_for_select(@download_formats.collect { |format_type| format_type }), prompt: "Format" %>
       <br>
       <%= submit_tag "Download" %>
    <% end %>
