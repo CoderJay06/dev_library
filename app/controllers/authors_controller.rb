@@ -6,7 +6,6 @@ class AuthorsController < ApplicationController
 
   def show
     # show author's profile page
-    # binding.pry 
     @author = Author.find_by(id: params[:id])
   end
 end

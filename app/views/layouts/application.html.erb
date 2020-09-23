@@ -15,10 +15,12 @@
     <% if current_user %>
     <form class="form-inline">
       <input class="form-control mr-sm-2" type="search" placeholder="Search Library" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> 
     </form>
+    <div class="logged-in">
+      Logged in as, <%= link_to current_user.username, user_path(current_user) %>
+    </div>
     <% end %>
-    <br>
     <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
     <a class="navbar-brand" href="<%= homepage %>">
       <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-book-half" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
