@@ -5,6 +5,7 @@ A content management system library application for Software Development books. 
 ## Table of contents
 * [Setup](#setup)
 * [Technologies](#technologies)
+* [Status](#status)
 * [Logo](#logo)
 
 ## Setup
@@ -32,6 +33,10 @@ Project is created with:
 * Bootstrap 4.5
 * Sass
 
-# Logo
+## Status
+This project is still being developed. Added features and functioinality will include:<br>
+subscription plans, book images, book wish lists, stripe billing and more!
+
+## Logo
 ![Algorithm schema](./app/assets/images/logo.png)
 	
