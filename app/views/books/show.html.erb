@@ -19,7 +19,12 @@
       <option value="2"><%= @download_formats[1] %></option>
       <option value="3"><%= @download_formats[2] %></option>
    </select>
-   <%= button_to "Download", download_book_path(@book), method: :post %>
+   <%= form_tag(download_book_path(@book)) do %>
+      <%= select_tag "count", raw("<option>1</option><option>2</option><option>3</option><option>4</option>"), prompt: "Qty" %>
+      <br>
+      <%= submit_tag "Download" %>
+   <% end %>
+   <%# <%= button_to "Download", download_book_path(@book), method: :post %>
    <br>
    <h4>Customer reviews</h4>
 
@@ -28,4 +33,5 @@
    <% @book.reviews.each do |review| %>
       <%= render '/reviews/reviews_links', review: review %>
    <% end %>
+
 <% end %>
