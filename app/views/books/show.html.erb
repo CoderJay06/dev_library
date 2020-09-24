@@ -12,17 +12,14 @@
    <%= button_to "Delete book", admin_book_path(@book), method: :delete %>
 <% else %>
    <%= display_download_success_message %>
-   <%# Add collection select menu so user's can select a download format %>
    <br>
    <%= form_tag(download_book_path(@book)) do %>
       <%= select_tag "quantity", options_for_select((1..10).each { |qty| qty }), prompt: "Qty" %>
-      <%# <%= select_tag "count", raw("<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>") %>
       <br>
       <%= select_tag "format",  options_for_select(@download_formats.collect { |format_type| format_type }), prompt: "Format" %>
       <br>
       <%= submit_tag "Download" %>
    <% end %>
-   <%# <%= button_to "Download", download_book_path(@book), method: :post %>
    <br>
    <h4>Customer reviews</h4>
 
@@ -31,5 +28,4 @@
    <% @book.reviews.each do |review| %>
       <%= render '/reviews/reviews_links', review: review %>
    <% end %>
-
 <% end %>
