@@ -5,7 +5,7 @@
 </ul><% end %>
 <br>
 
-<% if current_user.admin? %>
+<% if admin? %>
   <%= button_to "Add book", new_admin_book_path, method: :get %>
   <%= button_to "Add author", new_admin_author_path, method: :get %>
   <%= button_to "Add category", new_admin_category_path, method: :get %>

@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
    protect_from_forgery with: :exception 
    helper_method :current_user, 
+                 :admin?,
                  :logged_in?, 
                  :homepage, 
                  :login_and_redirect, 
@@ -21,6 +22,10 @@ class ApplicationController < ActionController::Base
 
    def homepage
       root_url
+   end 
+
+   def admin?
+      current_user.admin?
    end 
 
    def current_user

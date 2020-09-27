@@ -7,7 +7,7 @@
 <p>Release Date: <%= @book.release_date %></p>
 <br>
 <br>
-<% if current_user.admin? %> 
+<% if admin? %> 
    <%= button_to "Edit book", edit_admin_book_path(@book), method: :get %>
    <%= button_to "Delete book", admin_book_path(@book), method: :delete %>
 <% else %>

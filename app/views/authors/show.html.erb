@@ -9,7 +9,7 @@
 </ul><% end %>
 <% end %>
 
-<% if current_user.admin? %>
+<% if admin? %>
    <%= link_to "Edit author", edit_admin_author_path %>
    <br>
    <%= link_to "Delete author & books", delete_author_path %>

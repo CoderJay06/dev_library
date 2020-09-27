@@ -4,23 +4,19 @@ class SessionsController < ApplicationController
   def home
   end
 
-  # get login form
   def new
   end
 
-  # login user
   def create
     @user = User.find_by(username: params[:username])
     authenticate_and_login(@user)
   end
 
-  # logout user
   def destroy
     logout 
     redirect_to homepage 
   end 
 
-  # log users in with google omniauth
   def googleAuth 
     user = User.find_or_create_from_omniauth(auth)
     login_and_redirect(@user)
