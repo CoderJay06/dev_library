@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
 
   def googleAuth 
     user = User.find_or_create_from_omniauth(auth)
-    login_and_redirect(@user)
+    login_and_redirect(user)
   end 
 
   private 
