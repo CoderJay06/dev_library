@@ -7,6 +7,7 @@ class Book < ApplicationRecord
    
    validates :title, :author, :description, :release_date, :category, 
    presence: true
+   validates :title, :description, uniqueness: true 
    validates :title, :author, length: { in: 3..250 }
    validates :description, length: { maximum: 2000 }
    validates_associated :reviews
