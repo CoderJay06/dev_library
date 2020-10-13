@@ -2,5 +2,6 @@ class Review < ApplicationRecord
   belongs_to :user
   belongs_to :book
 
-  validates_presence_of :rating, :comment
+  validates :rating, :comment, presence: true
+  validates :rating, :inclusion => { :in => 1..5 }
 end
