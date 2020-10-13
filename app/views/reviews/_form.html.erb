@@ -1,7 +1,7 @@
 <%= form_for ([@book, @review]) do |f| %>
    <%= f.hidden_field :user_id %>
    <%= f.label :rating %>
-   <%= f.number_field :rating %>
+   <%= f.number_field :rating, min: 1, max: 5 %>
    <br>
    <%= f.label :comment %>
    <%= f.text_area :comment %>
