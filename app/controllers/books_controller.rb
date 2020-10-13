@@ -7,7 +7,6 @@ class BooksController < ApplicationController
    end 
 
    def show
-      # Set array of download format types
       @download_formats = ["PDF", "EPUB", "DOC"]
    end 
 
