@@ -1,0 +1,9 @@
+<% object.each do |obj| %>
+   <% if obj.title %>
+      <%= render 'book_li', book: obj %>
+      <br>
+   <% else %>
+      <%= link_to obj.name, author_path(obj) %>
+      <br>
+   <% end %>
+<% end %>
