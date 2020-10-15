@@ -13,14 +13,12 @@
   <body>
     <%= link_to image_tag("logo.png", class: "logo-img"), homepage %>
     <% if current_user %>
-    <%# <form class="form-inline"> %>
-      <%= form_tag('/search', method: "get", action: "search") do %>
-        <%= text_field_tag "search", params[:search], {class: "form-control mr-sm-2", placeholder: "Search library"} %>
+     <%= form_tag('/search', method: "get", action: "search") do %>
+      <div class="search-wrapper">
+        <%= search_field_tag "search", params[:search], {class: "search", placeholder: "Search library"} %>
         <%=  submit_tag "Submit", name: nil, class: "btn btn-outline-success my-2 my-sm-0" %>
+      </div>
       <% end %>
-      <%# <input class="form-control mr-sm-2" type="search" placeholder="Search Library" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>  %>
-    <%# </form> %>
     <div class="logged-in">
       Logged in as, <%= link_to current_user.username, user_path(current_user) %>
     </div>
