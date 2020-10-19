@@ -28,7 +28,6 @@ Rails.application.routes.draw do
     resources :downloads
   end
   
-  resources :books, only: [:index, :show, :recently_added]
   resources :authors, only: [:index, :show]
   resources :users
   resources :categories, only: [:index, :show]
