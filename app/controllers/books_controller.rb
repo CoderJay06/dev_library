@@ -6,10 +6,10 @@ class BooksController < ApplicationController
       @books = Book.all 
    end 
 
-   def search 
-      # binding.pry 
-      @books = Book.search(params[:search]) if params[:search].present?
-   end 
+   # def search 
+   #    # binding.pry 
+   #    @books = Book.search(params[:search]) if params[:search].present?
+   # end 
 
    def show
       @download_formats = ["PDF", "EPUB", "DOC"]
