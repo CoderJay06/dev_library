@@ -10,10 +10,14 @@ require("channels")
 
 import "bootstrap"
 import "../stylesheets/application"
+import $ from 'jquery';
+
+global.$ = $;
+global.jQuery = $;
 
 document.addEventListener("turbolinks:load", () => {
-    $('[data-toggle=tooltip"]').tooltip()
-    $('[data-toggle=tooltip"]').popover()
+    $('[data-toggle=tooltip]').tooltip()
+    $('[data-toggle=tooltip]').popover()
 })
 
 
