@@ -7,11 +7,13 @@ class Book < ApplicationRecord
    
    validates :title, :author, :description, :release_date, :category, 
    presence: true
+   validates :title, :description, uniqueness: true 
    validates :title, :author, length: { in: 3..250 }
    validates :description, length: { maximum: 2000 }
    validates_associated :reviews
    
-   scope :recently_added, -> { order("books.updated_at DESC LIMIT 10") }
+   scope :search, ->(search_term) { where("title LIKE ?", "%#{search_term}%") }
+   scope :recently_added, -> { order(Arel.sql("books.updated_at DESC LIMIT 10")) }
    accepts_nested_attributes_for :reviews, :downloads
 
    # category name writer for associating a book with a category
