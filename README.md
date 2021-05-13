@@ -29,9 +29,6 @@ $ rake db:seed
 Run the server:<br>
 `$ rails s`
 
-For Bootstrap on the front end:<br>
-`$ yarn add bootstrap jquery popper.js`
-
 ## Technologies
 Project is created with:
 * [Ruby 2.6.1](https://www.ruby-lang.org/en/)
