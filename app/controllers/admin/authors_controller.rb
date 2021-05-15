@@ -1,5 +1,6 @@
 class Admin::AuthorsController < ApplicationController
    before_action :set_author, except: [:new, :delete]
+   
    def new
       @author = Author.new
    end

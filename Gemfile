@@ -27,10 +27,10 @@ gem 'pry'
 # gem 'image_processing', '~> 1.2'
 
 # Omniauth authentication via Google
-# gem 'omniauth'
-# gem 'omniauth-rails_csrf_protection'
+gem 'omniauth'
+gem 'omniauth-rails_csrf_protection'
 # gem 'omniauth-github'
-gem 'dotenv-rails'
+# gem 'dotenv-rails'
 gem 'omniauth-google-oauth2'
 
 # Reduces boot times through caching; required in config/boot.rb
