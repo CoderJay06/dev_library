@@ -5,6 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Prevent duplicating seed data
+User.destroy_all
+Category.destroy_all
+Author.destroy_all
+Book.destroy_all
+
 user1 = User.create(first_name: "Jay", 
                     last_name: "Cru", 
                     email: "jjc@email.com", 
