@@ -32,13 +32,5 @@ class Book < ApplicationRecord
 
    def author_name
       self.author ? self.author.name : nil 
-   end 
-
-   # def reviews_attributes=(reviews_hashes)
-   #    # process attributes hash
-   #    # {"rating" => "", "comment" => ""}
-   #    # raise reviews_hashes.inspect
-   #    # binding.pry
-   #    self.reviews.build(rating: reviews_hashes[:rating], comment: reviews_hashes[:comment]).save
-   # end    
+   end  
 end
