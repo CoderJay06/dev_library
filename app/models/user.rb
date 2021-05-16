@@ -15,7 +15,7 @@ class User < ApplicationRecord
   validates :email, :password_confirmation, confirmation: true
 
   # signup new user or login existing user through Google Omniauth
-  def self.find_or_create_from_omniauth(auth_hash)
+  def self.find_or_create_from_omniauth(auth_hash)  
     self.find_or_create_by(email: auth_hash.info.email) do |user|
       user.provider = auth_hash.provider
       user.uid = auth_hash.uid
