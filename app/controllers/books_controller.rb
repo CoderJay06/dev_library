@@ -1,8 +1,11 @@
 class BooksController < ApplicationController
-   before_action :require_login
+   before_action :require_login, :google_books_api
    before_action :set_book, only: [:show]
    
    def index 
+      binding.pry
+      # book object: @google_books["items"][0]["volumeInfo"]["title"]
+      # link: @google_books["items"][0]["selfLink"]
       @books = Book.all 
    end 
 

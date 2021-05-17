@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
                  :admin?,
                  :logged_in?, 
                  :homepage, 
+                 :google_books_api,
                  :login_and_redirect, 
                  :require_login,
                  :logout
@@ -22,6 +23,13 @@ class ApplicationController < ActionController::Base
 
    def homepage
       root_url
+   end 
+
+   def google_books_api
+      # test api key for google books
+      url = "https://www.googleapis.com/books/v1/volumes?q=subject:computer-science&printType=books&key=#{ENV["API_KEY"]}"
+      response = HTTParty.get(url)
+      @google_books = response.parsed_response
    end 
 
    def admin?
