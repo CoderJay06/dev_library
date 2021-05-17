@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
-  has_many :reviews
-  has_many :downloads
+  has_many :reviews, dependent: :destroy
+  has_many :downloads, dependent: :destroy
   has_many :books, through: :downloads
   
   validates :first_name, :last_name, :email, :username, 
