@@ -5,12 +5,42 @@
 <!-- Display validation errors if any -->
 <%= display_validation_alert_if_error %>
 <br>
-<%= form_tag(login_path) do %>
-   <%= label_tag(:username) %>
-   <%= text_field_tag(:username) %>
-   <br>
-   <%= label_tag(:password) %>
-   <%= password_field_tag(:password) %>
-   <br>
-   <%= submit_tag("Login") %>
+
+<link rel="stylesheet" href="app/assets/stylesheets/users/forms.css" >
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+<div class="container">
+<hr>
+
+<div class="card bg-light">
+<article class="card-body mx-auto" style="max-width: 400px;">
+	<h4 class="card-title mt-3 text-center">Login</h4>
+	<p class="text-center"></p>
+	<p>
+		<a href="" class="btn btn-block btn-google"> <i class="fab fa-google"></i> Login via Google<%= link_to "", "/auth/google_oauth2" %></a>
+	</p>
+	<p class="divider-text">
+        <span class="bg-light">OR</span>
+    </p>
+
+	<%= form_tag(login_path) do %>
+      
+	<div class="form-group input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		</div>
+         <%= text_field_tag :username, nil, class: "form-control", placeholder: "Username" %>
+    </div> <!-- form-group// -->
+    
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		</div>
+          <%= password_field_tag :password, nil, class: "form-control", placeholder: "password"  %>
+    </div> <!-- form-group// -->                
+    <div class="form-group">
+         <%= submit_tag "Login", class: "btn btn-primary btn-block" %>
+    </div> <!-- form-group// -->      
+    <p class="text-center">Don't Have an account? <%= link_to "Signup", signup_path %></p>                                                                 
 <% end %>
+</article>
