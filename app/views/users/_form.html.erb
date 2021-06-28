@@ -31,17 +31,11 @@
 <%
 =end%>
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
+<link rel="stylesheet" href="app/assets/stylesheets/users/forms.css" >
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 
 <div class="container">
 <hr>
-
-
 
 <div class="card bg-light">
 <article class="card-body mx-auto" style="max-width: 400px;">
@@ -53,44 +47,58 @@
 	<p class="divider-text">
         <span class="bg-light">OR</span>
     </p>
-	<form>
+	<%= form_for(@user) do |f| %>
+        <%= f.label :admin%>
+        <%= f.check_box :admin %>
 	<div class="form-group input-group">
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-		 </div>
-        <input name="" class="form-control" placeholder="Full name" type="text">
+		</div>
+        <%= f.text_field :first_name, { class: "form-control", placeholder: "First Name" } %>
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		</div>
+        <%= f.text_field :last_name, { class: "form-control", placeholder: "Last Name" } %>
     </div> <!-- form-group// -->
     <div class="form-group input-group">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-		 </div>
-        <input name="" class="form-control" placeholder="Email address" type="email">
+		</div>
+            <%= f.email_field :email, { class: "form-control", placeholder: "Email" } %>
     </div> <!-- form-group// -->
     <div class="form-group input-group">
     	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+		</div>
+            <%= f.email_field :email_confirmation, { class: "form-control", placeholder: "Email Confirmation" } %>
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		</div>
 		
-    	<input name="" class="form-control" placeholder="Phone number" type="text">
+    	 <%= f.text_field :username, { class: "form-control", placeholder: "Username"} %>
     </div> <!-- form-group// -->
 
     <div class="form-group input-group">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
-        <input class="form-control" placeholder="Create password" type="password">
+        <%= f.password_field :password, { class: "form-control", placeholder: "Password" } %>
     </div> <!-- form-group// -->
     <div class="form-group input-group">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
-        <input class="form-control" placeholder="Repeat password" type="password">
+         <%= f.password_field :password_confirmation, { class: "form-control", placeholder: "Password Confirmation" } %>
     </div> <!-- form-group// -->                                      
     <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+         <%= f.submit "Signup", class: "btn btn-primary btn-block" %>
     </div> <!-- form-group// -->      
     <p class="text-center">Have an account? <a href="">Log In</a> </p>                                                                 
-</form>
+<% end %>
 </article>
 </div> <!-- card.// -->
 
