@@ -9,7 +9,7 @@
 	<h4 class="card-title mt-3 text-center">Create Account</h4>
 	<p class="text-center">Get started with your free account</p>
 	<p>
-		<a href="" class="btn btn-block btn-google"> <i class="fab fa-google"></i> Login via Google<%= link_to "", "/auth/google_oauth2" %></a>
+	    <div class="btn btn-block btn-google"> <i class="fab fa-google"></i><%= link_to("\sLogin via Google", "/auth/google_oauth2", method: :post)  %></div>
 	</p>
 	<p class="divider-text">
         <span class="bg-light">OR</span>
