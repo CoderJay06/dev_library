@@ -1,36 +1,3 @@
-
-<%
-=begin%>
- <%= form_for(@user) do |f| %>
-   <%= f.label :admin%>
-   <%= f.check_box :admin %>
-   <br>
-   <%= f.label :first_name %>
-   <%= f.text_field :first_name %>
-   <br>
-   <%= f.label :last_name %>
-   <%= f.text_field :last_name %>
-   <br>
-   <%= f.label :email %>
-   <%= f.email_field :email %>
-   <br>
-   <%= f.label :email_confirmation %>
-   <%= f.email_field :email_confirmation %>
-   <br>
-   <%= f.label :username %>
-   <%= f.text_field :username %>
-   <br>
-   <%= f.label :password %>
-   <%= f.password_field :password %>
-   <br>
-   <%= f.label :password_confirmation %>
-   <%= f.password_field :password_confirmation  %>
-   <br>
-   <%= f.submit "Signup" %>
-<% end %> 
-<%
-=end%>
-
 <link rel="stylesheet" href="app/assets/stylesheets/users/forms.css" >
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 
@@ -42,7 +9,7 @@
 	<h4 class="card-title mt-3 text-center">Create Account</h4>
 	<p class="text-center">Get started with your free account</p>
 	<p>
-		<a href="" class="btn btn-block btn-google"> <i class="fab fa-google"></i>Login via Google</a>
+		<a href="" class="btn btn-block btn-google"> <i class="fab fa-google"></i> Login via Google<%= link_to "", "/auth/google_oauth2" %></a>
 	</p>
 	<p class="divider-text">
         <span class="bg-light">OR</span>
@@ -97,7 +64,7 @@
     <div class="form-group">
          <%= f.submit "Signup", class: "btn btn-primary btn-block" %>
     </div> <!-- form-group// -->      
-    <p class="text-center">Have an account? <a href="">Log In</a> </p>                                                                 
+    <p class="text-center">Have an account? <%= link_to "Login", login_path %></p>                                                                 
 <% end %>
 </article>
 </div> <!-- card.// -->
