@@ -38,3 +38,13 @@ search:focus {
     border: 1.5pxsolid #009688;
     background-color: white;
 }
+
+img.logo-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    text-align: center;
+}
