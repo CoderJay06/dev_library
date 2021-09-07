@@ -1,9 +1,10 @@
-<h1>Authors Index</h1>
-<% @authors.each do |author| %>
-   <br>
-   <%= link_to author.name, author_path(author) %>
-<% end %>
+<div class="authors-index-container">
+   <h1>Authors Index</h1>
+   <ul class="authors-index-list"><% @authors.each do |author| %>
+      <li class="authors-index-link"><%= link_to author.name, author_path(author) %></li>
+   <% end %></ul>
 
-<% if current_user.admin? %>
-   <%= button_to "Add author", new_admin_author_path, method: :get %>
-<% end %>
+   <% if current_user.admin? %>
+      <%= button_to "Add author", new_admin_author_path, method: :get %>
+   <% end %>
+</div>

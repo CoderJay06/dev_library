@@ -91,6 +91,44 @@ h1 {
     font-weight: 700;
 }
 
+/* Authors index styles */
+.authors-index-container {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.authors-index-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+}
+
+.authors-index-link {
+    margin-bottom: 1em;
+}
+
+/* Categories index styles */
+.categories-index-container {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.categories-index-container h1 {
+
+}
+
+.categories-index-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.categories-index-link {
+    margin-bottom: 1em;
+}
+
 /* User profile styles */
 .user-profile-container {
     font-family: 'Times New Roman', Times, serif;
