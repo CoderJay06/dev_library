@@ -48,3 +48,74 @@ img.logo-img {
 h1 {
     text-align: center;
 }
+
+/* User profile styles */
+.user-profile-container {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.user-profile-container h1 {
+    font-style: italic;
+    font-weight: 550;
+    margin-bottom: 1em;
+}
+
+.user-profile-container h2 {
+    font-style: italic;
+    text-align: center;
+}
+
+.user-books-list {
+    padding: 0.125em 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-books-card {
+    background-color: beige;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 80%;
+    height: 100%;
+    text-align: center;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+}
+
+.user-books-card:hover,
+.user-books-card:focus {
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    width: 60%;
+}
+
+.user-profile-links {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-profile-link {
+    background: #3b4191;
+    color: #FFF;
+    padding: 1.250em 1em;
+    margin-bottom: 1em;
+    border-radius: 5%;
+}
+
+.user-profile-link:hover,
+.user-profile-link:focus {
+    text-decoration: none;
+    opacity: 80%;
+    color: #FFF;
+}
+
+
+
+.user-profile-link:last-of-type:hover,
+.user-profile-link:last-of-type:focus {
+    background: rgb(187, 58, 58);
+} 
