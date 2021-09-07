@@ -1,5 +1,6 @@
-<h1>Categories index</h1>
-<% @categories.each do |category| %>
-   <%= link_to category.name, category_path(category) %>
-   <br>
-<% end %>
+<div class="categories-index-container">
+   <h1>Categories Index</h1>
+   <ul class="categories-index-list"><% @categories.each do |category| %>
+      <li class="categories-index-link"><%= link_to category.name, category_path(category) %></li>
+   <% end %></ul>
+</div>

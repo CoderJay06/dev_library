@@ -1,16 +1,19 @@
-<h1>Author's Profile</h1>
-<br>
-<h3><%= @author.name %></h3>
-<br>
-<% if @author.books %>
-<h4>Books by <%= @author.name %>:</h4>
-<ul><% @author.books.each do |book| %>
-   <li><%= link_to book.title, book_path(book) %></li>
-</ul><% end %>
-<% end %>
-
-<% if admin? %>
-   <%= link_to "Edit author", edit_admin_author_path %>
+<div class="author-container">
+   <h1>Author's Profile</h1>
    <br>
-   <%= link_to "Delete author & books", delete_author_path %>
-<% end %>
+   <h3><%= @author.name %></h3>
+   <br>
+   <hr />
+   <% if @author.books %>
+   <h4>Books by <%= @author.name %>:</h4>
+   <ul class="author-books-list"><% @author.books.each do |book| %>
+      <li class="author-book-link"><%= link_to book.title, book_path(book) %></li>
+   <% end %></ul>
+   <% end %>
+
+   <% if admin? %>
+      <%= link_to "Edit author", edit_admin_author_path %>
+      <br>
+      <%= link_to "Delete author & books", delete_author_path %>
+   <% end %>
+</div>

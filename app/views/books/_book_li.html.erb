@@ -1,6 +1,6 @@
-<li>Title: <strong><%= link_to book.title, book_path(book) %></strong></li>
-<li>By: <%= link_to book.author_name, author_path(book.author) %></li>
-<li>Description: <%= book.description %></li>
-<li>Release Date: <%= book.release_date %></li>
-<li>Category: <%= book.category.name %></li>
+<li><strong>Title: </strong><%= link_to book.title, book_path(book), class: "books-index-card-title" %></li>
+<li><strong>By: </strong><%= link_to book.author_name, author_path(book.author), class: "books-index-card-author" %></li>
+<li><strong>Description:</strong> <%= book.description %></li>
+<li><strong>Release Date:</strong> <%= book.release_date %></li>
+<li><strong>Category:</strong> <%= book.category.name %></li>
 <br>

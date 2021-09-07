@@ -1,17 +1,22 @@
-<h1>Welcome, <%= @user.username %></h1>
+<div class="user-profile-container">
+   <h1>Welcome, <%= @user.username %></h1>
 
-<% unless admin? %>
-   <h2>Your books:</h2>
-   <ul><% @user.books.each do |book| %>
-      <li><%= link_to "#{book.title}", book_path(book) %></li>
-      <li>By, <i><%= link_to book.author.name, author_path(book.author) %></i></li>
-      <li><i>Book Quantity: <%= book.downloads.find_by(book_id: book.id).quantity %></i></li>
+   <% unless admin? %>
+      <h2>Your books:</h2>
+      <div class="user-books-list"><% @user.books.each do |book| %>
+         <div class="user-books-card">
+            <p><%= link_to "#{book.title}", book_path(book) %></p>
+            <p>By, <i><%= link_to book.author.name, author_path(book.author) %></i></p>
+            <p><i>Book Quantity: <%= book.downloads.find_by(book_id: book.id).quantity %></i></p>
+         </div>
+         <br>
+         <%# <%= render '/books/book_li', book: book %>
+      </div><% end %>
       <br>
-      <%# <%= render '/books/book_li', book: book %>
-   </ul><% end %>
-   <br>
-   <%= link_to "Your reviews", user_reviews_path %>
-   <br>
-   <br>
-   <%= link_to "Delete account", url_for(action: :delete), method: :get %>
-<% end %>
+      <div class="user-profile-links">
+         <%= link_to "Your reviews", user_reviews_path, class: "user-profile-link" %>
+
+         <%= link_to "Delete account", url_for(action: :delete), method: :get, class: "user-profile-link" %>
+      </div>
+   <% end %>
+</div>
