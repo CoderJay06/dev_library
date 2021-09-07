@@ -1,5 +1,6 @@
-<h1><%= @category.name %> Books</h1>
-<% @category.books.each do |book| %>
-   <%= link_to book.title, book_path(book) %>
-   <br>
-<% end %>
+<div class="category-container">
+   <h1><%= @category.name %> Books</h1>
+   <ul class="category-books-list"><% @category.books.each do |book| %>
+      <li class="category-book-link"><%= link_to book.title, book_path(book) %></li>
+   <% end %></ul>
+</div>

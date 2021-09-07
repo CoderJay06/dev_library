@@ -129,6 +129,15 @@ h1 {
     margin-bottom: 1em;
 }
 
+/* Category page styles */
+.category-container {
+    text-align: center;
+}
+
+.category-books-list {
+    list-style-type: none;
+}
+
 /* Book profile styles */
 .book-container {
     font-family: 'Times New Roman', Times, serif;
@@ -145,8 +154,18 @@ h1 {
     border-top: 1px solid rgba(0,0,0,0.2);
 }
 
-.book p {
+/* Author page styles */
+.author-container {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
 
+.author-container hr {
+    width: 50%;
+}
+
+.author-books-list {
+    list-style-type: none;
 }
 
 /* User profile styles */
