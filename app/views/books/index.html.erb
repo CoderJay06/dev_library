@@ -1,12 +1,16 @@
-<h1><%= display_books_heading(@book) %></h1>
+<div class="books-index-container">
+  <h1><%= display_books_heading(@book) %></h1>
 
-<ul><% @books.all.each do |book| %>
+  <ul class="books-index-list"><% @books.all.each do |book| %>
+    <div class="books-index-card">
       <%= render 'book_li', book: book %>
-</ul><% end %>
-<br>
+    </div>
+  </ul><% end %>
+  <br>
 
-<% if admin? %>
-  <%= button_to "Add book", new_admin_book_path, method: :get %>
-  <%= button_to "Add author", new_admin_author_path, method: :get %>
-  <%= button_to "Add category", new_admin_category_path, method: :get %>
-<% end %>
+  <% if admin? %>
+    <%= button_to "Add book", new_admin_book_path, method: :get %>
+    <%= button_to "Add author", new_admin_author_path, method: :get %>
+    <%= button_to "Add category", new_admin_category_path, method: :get %>
+  <% end %>
+</div>

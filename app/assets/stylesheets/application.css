@@ -49,6 +49,48 @@ h1 {
     text-align: center;
 }
 
+/* Books index styles */
+.books-index-container {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.books-index-list {
+    padding: 0.125em 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.books-index-card {
+    list-style-type: none;
+    background-color: beige;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 80%;
+    height: 100%;
+    /* text-align: center; */
+    margin: 0 auto;
+    padding: 1em;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+    margin-bottom: 1em;
+}
+
+.books-index-card:hover,
+.books-index-card:focus {
+    opacity: 75%;
+    font-weight: 500;
+}
+
+.books-index-card-title:hover,
+.books-index-card-author:hover {
+   text-decoration: none;
+}
+
+.books-index-card-title {
+    font-weight: 700;
+}
+
 /* User profile styles */
 .user-profile-container {
     font-family: 'Times New Roman', Times, serif;
