@@ -1,31 +1,34 @@
-<h1>Book page</h1>
-
-<p>Title: <%= @book.title %></p>
-<p>Author: <%= link_to @book.author_name, author_path(@book.author) %></p>
-<p>Description: <%= @book.description %>
-<p>Category: <%= @book.category_name %></p>
-<p>Release Date: <%= @book.release_date %></p>
-<br>
-<br>
-<% if admin? %> 
-   <%= button_to "Edit book", edit_admin_book_path(@book), method: :get %>
-   <%= button_to "Delete book", admin_book_path(@book), method: :delete %>
-<% else %>
-   <%= display_download_success_message %>
+<div class="book-container">
+   <h1>Book page</h1>
+   <div class="book">
+      <p><strong>Title:</strong> <%= @book.title %></p>
+      <p><strong>Author:</strong> <%= link_to @book.author_name, author_path(@book.author) %></p>
+      <p><strong>Description:</strong> <%= @book.description %>
+      <p><strong>Category:</strong> <%= @book.category_name %></p>
+      <p><strong>Release Date:</strong> <%= @book.release_date %></p>
+   </div>
    <br>
-   <%= form_tag(download_book_path(@book)) do %>
-      <%= select_tag "quantity", options_for_select((1..10).each { |qty| qty }), prompt: "Qty" %>
-      <br>
-      <%= select_tag "format",  options_for_select(@download_formats.collect { |format_type| format_type }), prompt: "Format" %>
-      <br>
-      <%= submit_tag "Download" %>
-   <% end %>
    <br>
-   <h4>Customer reviews</h4>
+   <% if admin? %> 
+      <%= button_to "Edit book", edit_admin_book_path(@book), method: :get, class: "book-admin-link" %>
+      <%= button_to "Delete book", admin_book_path(@book), method: :delete, class: "book-admin-link" %>
+   <% else %>
+      <%= display_download_success_message %>
+      <br>
+      <%= form_tag(download_book_path(@book)) do %>
+         <%= select_tag "quantity", options_for_select((1..10).each { |qty| qty }), prompt: "Qty" %>
+         <br>
+         <%= select_tag "format",  options_for_select(@download_formats.collect { |format_type| format_type }), prompt: "Format" %>
+         <br>
+         <%= submit_tag "Download" %>
+      <% end %>
+      <br>
+      <h4>Customer reviews</h4>
 
-   <%= button_to "Write a review", new_book_review_path(@book), method: :get %>
+      <%= button_to "Write a review", new_book_review_path(@book), method: :get %>
 
-   <% @book.reviews.each do |review| %>
-      <%= render '/reviews/reviews_links', review: review %>
+      <% @book.reviews.each do |review| %>
+         <%= render '/reviews/reviews_links', review: review %>
+      <% end %>
    <% end %>
-<% end %>
+</div>

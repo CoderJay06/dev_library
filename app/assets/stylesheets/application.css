@@ -129,6 +129,26 @@ h1 {
     margin-bottom: 1em;
 }
 
+/* Book profile styles */
+.book-container {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.book {
+    padding: 0.125em 1em;
+    margin: 0 auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    border-top: 1px solid rgba(0,0,0,0.2);
+}
+
+.book p {
+
+}
+
 /* User profile styles */
 .user-profile-container {
     font-family: 'Times New Roman', Times, serif;
