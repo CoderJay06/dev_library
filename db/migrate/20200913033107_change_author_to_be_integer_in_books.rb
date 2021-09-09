@@ -1,6 +1,6 @@
 class ChangeAuthorToBeIntegerInBooks < ActiveRecord::Migration[6.0]
   def up
-    change_column :books, :author, :integer
+    change_column :books, :author, :integer, using: "author::integer"
   end
 
   def down
