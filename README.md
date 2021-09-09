@@ -3,12 +3,17 @@
 A content management system library application for Software Development books. Aimed mainly towards Software Development students, Computer Science students, professional developers and instructors. A user of this app can find the technical books they need for their school, profession or just to learn. User's can signup for an account and download their books straight from the application.
 
 ## Table of contents
+* [Demo](#demo)
 * [Clone](#clone)
 * [Setup](#setup)
 * [Technologies](#technologies)
 * [Status](#status)
 * [Logo](#logo)
 * [License](#license)
+
+## Demo
+To access the app:<br>
+Heroku URL: [Dev Library App](https://dev-library-app.herokuapp.com/) <br>
 
 ## Clone
 Clone this repo to your local machine using either one of the following:<br>
