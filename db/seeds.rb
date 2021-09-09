@@ -62,34 +62,34 @@ book1 = Book.create(title: "Pragmatic Programmer",
                     programming and software engineering, written by Andrew Hunt and David Thomas and published 
                     in October 1999. It is used as a textbook in related university courses. It was the first in 
                     a series of books under the label The Pragmatic Bookshelf.", 
-                    release_date: 1999, 
+                    release_date: "1999-01-08", 
                     category_id: category2.id)
 book2 = Book.create(title: "Introduction to Algorithms", 
                     author_id: author2.id, 
                     description: "ntroduction to Algorithms is a book on computer programming by Thomas H. Cormen, 
                     Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. The book has been widely used as 
                     the textbook for algorithms courses at many universities",
-                    release_date: 1992, 
+                    release_date: "1992-01-08", 
                     category_id: category1.id)
 book3 = Book.create(title: "Code Complete", 
                     author_id: author3.id, 
                     description: "Code Complete is a software development book, written by Steve McConnell and published 
                     in 1993 by Microsoft Press, encouraging developers to continue past code-and-fix programming and the 
                     big design up front and waterfall models",
-                    release_date: 2001, 
+                    release_date: "2001-01-08", 
                     category_id: category2.id)
 book4 = Book.create(title: "Cracking the Coding Interview", 
                     author_id: author4.id, 
                     description: "Now in the 6th edition, Cracking the Coding Interview gives you the interview preparation 
                     you need to get the top software developer jobs.",
-                    release_date: 2019, 
+                    release_date: "2019-01-08", 
                     category_id: category1.id)
 book5 = Book.create(title: "Clean Code: A Handbook of Agile Software Craftsmanship", 
                     author_id: author5.id, 
                     description: "Every year, countless hours and significant resources are lost because of poorly written code. 
                     But it doesn't have to be that way. Noted software expert Robert C. Martin presents a revolutionary paradigm 
                     with Clean Code: A Handbook of Agile Software Craftsmanship .",
-                    release_date: 2009, 
+                    release_date: "2009-01-08", 
                     category_id: category2.id)
 book6 = Book.create(title: "The Mythical Man-Month: Essays on Software Engineering", 
                     author_id: author6.id, 
@@ -97,7 +97,7 @@ book6 = Book.create(title: "The Mythical Man-Month: Essays on Software Engineeri
                     with subsequent editions in 1982 and 1995. Its central theme is that 'adding manpower to a late software 
                     project makes it later'. This idea is known as 'Brooks law', and is presented along with the second-system 
                     effect and advocacy of prototyping.",
-                    release_date: 1995, 
+                    release_date: "1995-01-08", 
                     category_id: category3.id)
 book7 = Book.create(title: "Refactoring: Improving the Design of Existing Code", 
                     author_id: author7.id, 
@@ -105,7 +105,7 @@ book7 = Book.create(title: "Refactoring: Improving the Design of Existing Code",
                     Code shows how refactoring can make object-oriented code simpler and easier to maintain. Today refactoring 
                     requires considerable design know-how, but once tools become available, all programmers should be able to 
                     improve their code using refactoring techniques.",
-                    release_date: 1999, 
+                    release_date: "1999-01-08", 
                     category_id: category2.id)
 book8 = Book.create(title: "Agile Software Development : Principles, Patterns, and Practices", 
                     author_id: author5.id, 
@@ -114,5 +114,5 @@ book8 = Book.create(title: "Agile Software Development : Principles, Patterns, a
                     detailed description of a complete software design for reusable programs in C++ and Java. Using a practical, 
                     problem-solving approach, it shows how to develop an object-oriented application from the early stages of analysis, 
                     through the low-level design and into the implementation.",
-                    release_date: 2002, 
+                    release_date: "2002-01-08", 
                     category_id: category2.id)
