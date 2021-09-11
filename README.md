@@ -13,7 +13,11 @@ A content management system library application for Software Development books. 
 
 ## Demo
 To access the app:<br>
-Heroku URL: [Dev Library App](https://dev-library-app.herokuapp.com/) <br>
+*Heroku URL*: [Dev Library App](https://dev-library-app.herokuapp.com/) <br>
+
+Example login credentials:<br>
+*Username:* `coderJC`<br>
+*password:* `jc1234`<br>
 
 ## Clone
 Clone this repo to your local machine using either one of the following:<br>
