@@ -14,6 +14,13 @@
  *= require_self
  */
 
+ /* Navbar styles */
+ .navbar-light {
+     background-color:#e3f2fd;
+     opacity: 0.9;
+     font-weight: 600;
+ }
+
 .logged-in {
     text-align: right;
 }
@@ -91,42 +98,56 @@ h1 {
     font-weight: 700;
 }
 
-/* Authors index styles */
-.authors-index-container {
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center;
-}
+/* Author and Categories index styles */
 
-.authors-index-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    list-style-type: none;
-}
-
-.authors-index-link {
-    margin-bottom: 1em;
-}
-
-/* Categories index styles */
+.authors-index-container,
 .categories-index-container {
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
 }
 
-.categories-index-container h1 {
-
-}
-
-.categories-index-list {
-    list-style-type: none;
+.authors-index-list,
+.categories-index-list,
+.category-container  {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+    background-color: beige;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 80%;
+    height: 100%;
+    text-align: center;
     margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
 }
 
-.categories-index-link {
+.authors-index-link,
+.categories-index-link  {
     margin-bottom: 1em;
+}
+
+.authors-index-link a,
+.categories-index-link a,
+.category-book-link {
+    color: #009688;
+    font-weight: 800;
+}
+
+.authors-index-link a:hover,
+.authors-index-link a:focus,
+.categories-index-link a:hover,
+.categories-index-link a:focus {
+   background: #009688;
+   opacity: 0.5;
+   color: #FFF;
+   padding: 0.5em;
+   text-decoration: none;
+   border-radius: 5%;
+   border-bottom: none;
 }
 
 /* Category page styles */
@@ -238,3 +259,96 @@ h1 {
 .user-profile-link:last-of-type:focus {
     background: rgb(187, 58, 58);
 } 
+
+/* Review, author, book form styles  */
+form {
+    text-align: center;
+}
+
+.new_review,
+.new_category,
+.new_book,
+.new_author,
+.edit_review,
+.edit_category,
+.edit_book,
+.edit_author {
+    font-family: serif;
+    font-weight: 550;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #c3f7d7;
+    padding: 1em;
+    margin: 0 auto;
+    max-width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 2%;
+}
+
+.new_review label,
+.new_category label,
+.new_book label,
+.new_author label {
+    margin-bottom: 0.2em;
+}
+
+.new_review input[type="submit"],
+.new_category input[type="submit"],
+.new_book input[type="submit"],
+.new_author input[type="submit"],
+.edit_review input[type="submit"],
+.edit_category input[type="submit"],
+.edit_book input[type="submit"],
+.edit_author input[type="submit"] {
+    padding: 1em;
+    background: #009688;
+    font-weight: 800;
+    border-radius: 2%;
+    border: 0;
+    color: #FFF;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.new_review input[type="submit"]:hover,
+.new_review input[type="submit"]:focus,
+.new_category input[type="submit"]:hover,
+.new_category input[type="submit"]:focus,
+.new_book input[type="submit"]:hover,
+.new_book input[type="submit"]:focus,
+.new_author input[type="submit"]:hover,
+.new_author input[type="submit"]:focus {
+    cursor: pointer;
+    background: #018073;
+}
+
+#review_rating,
+#review_comment {
+    margin-bottom: 0.01em;
+}
+
+/* Admin styles */
+.admin-link {
+    padding: 1em;
+    background: #018073;
+    color: #FFF;
+    font-weight: 800;
+    border: none;
+    border-radius: 2%;
+    margin-bottom: 0.8em;
+    margin-top: 0.2em;
+}
+
+.admin-link:hover,
+.admin-link:focus {
+    background: #009688;
+    cursor: pointer;
+    text-decoration: none;
+    color: #FFF;
+}
+
+.admin-author-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+

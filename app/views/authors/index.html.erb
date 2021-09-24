@@ -3,8 +3,8 @@
    <ul class="authors-index-list"><% @authors.each do |author| %>
       <li class="authors-index-link"><%= link_to author.name, author_path(author) %></li>
    <% end %></ul>
-
+   <br>
    <% if current_user.admin? %>
-      <%= button_to "Add author", new_admin_author_path, method: :get %>
+      <%= button_to "Add author", new_admin_author_path, method: :get, class: "admin-link add-author" %>
    <% end %>
 </div>

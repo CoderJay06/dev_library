@@ -10,10 +10,10 @@
       <li class="author-book-link"><%= link_to book.title, book_path(book) %></li>
    <% end %></ul>
    <% end %>
-
-   <% if admin? %>
-      <%= link_to "Edit author", edit_admin_author_path %>
-      <br>
-      <%= link_to "Delete author & books", delete_author_path %>
-   <% end %>
 </div>
+<% if admin? %>
+      <div class="admin-author-links">
+         <%= link_to "Edit author", edit_admin_author_path, class: "admin-link" %>
+         <%= link_to "Delete author & books", delete_author_path, class: "admin-link" %>
+      </div>
+   <% end %>
