@@ -257,3 +257,42 @@ h1 {
 .user-profile-link:last-of-type:focus {
     background: rgb(187, 58, 58);
 } 
+
+/* Review, author, book form styles  */
+.new_review {
+    font-family: serif;
+    font-weight: 550;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #c3f7d7;
+    padding: 1em;
+    margin: 0 auto;
+    max-width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 2%;
+}
+
+.new_review label {
+    margin-bottom: 0.2em;
+}
+
+.new_review input[type="submit"] {
+    padding: 1em;
+    background: #009688;
+    font-weight: 800;
+    border-radius: 2%;
+    border: 0;
+    color: #FFF;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.new_review input[type="submit"]:hover,
+.new_review input[type="submit"]:focus {
+    cursor: pointer;
+    background: #018073;
+}
+
+#review_rating,
+#review_comment {
+    margin-bottom: 0.01em;
+}
