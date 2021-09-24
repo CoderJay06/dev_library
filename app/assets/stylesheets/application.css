@@ -91,42 +91,54 @@ h1 {
     font-weight: 700;
 }
 
-/* Authors index styles */
-.authors-index-container {
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center;
-}
+/* Author and Categories index styles */
 
-.authors-index-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    list-style-type: none;
-}
-
-.authors-index-link {
-    margin-bottom: 1em;
-}
-
-/* Categories index styles */
+.authors-index-container,
 .categories-index-container {
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
 }
 
-.categories-index-container h1 {
-
-}
-
-.categories-index-list {
-    list-style-type: none;
+.authors-index-list,
+.categories-index-list  {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+    background-color: beige;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 80%;
+    height: 100%;
+    text-align: center;
     margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
 }
 
-.categories-index-link {
+.authors-index-link,
+.categories-index-link  {
     margin-bottom: 1em;
+}
+
+.authors-index-link a,
+.categories-index-link a {
+    color: #009688;
+    font-weight: 800;
+}
+
+.authors-index-link a:hover,
+.authors-index-link a:focus,
+.categories-index-link a:hover,
+.categories-index-link a:focus {
+   background: #009688;
+   opacity: 0.5;
+   color: #FFF;
+   padding: 0.5em;
+   text-decoration: none;
+   border-radius: 5%;
+   border-bottom: none;
 }
 
 /* Category page styles */
