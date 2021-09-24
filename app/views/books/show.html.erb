@@ -10,8 +10,8 @@
    <br>
    <br>
    <% if admin? %> 
-      <%= button_to "Edit book", edit_admin_book_path(@book), method: :get, class: "book-admin-link" %>
-      <%= button_to "Delete book", admin_book_path(@book), method: :delete, class: "book-admin-link" %>
+      <%= button_to "Edit book", edit_admin_book_path(@book), method: :get, class: "admin-link edit-book" %>
+      <%= button_to "Delete book", admin_book_path(@book), method: :delete, class: "admin-link delete-book" %>
    <% else %>
       <%= display_download_success_message %>
       <br>
