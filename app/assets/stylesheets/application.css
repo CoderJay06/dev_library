@@ -14,6 +14,13 @@
  *= require_self
  */
 
+ /* Navbar styles */
+ .navbar-light {
+     background-color:#e3f2fd;
+     opacity: 0.9;
+     font-weight: 600;
+ }
+
 .logged-in {
     text-align: right;
 }
